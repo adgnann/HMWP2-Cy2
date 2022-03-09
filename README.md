@@ -15,10 +15,10 @@ Andrew D. Gnann (a), Yuan Xia (a,1), Jess Soule (a,2), Clara Barthélemy (a), Ja
 (b) Department of Biology, [Massachusetts Institute of Technology](https://www.mit.edu/), Cambridge MA 02142  
 (c) Department of Biophysics and Biophysical Chemistry, [Johns Hopkins University](https://www.jhu.edu/) School of Medicine, Baltimore MD 21205  
 
-1. Present address: GenScript Biotech Corporation, Piscataway, NJ, 08854
-2. Present address: University of California Los Angeles, Los Angeles, CA 90095
-3. Present address: Brigham and Women’s Hospital, Boston, MA 02115
-4. Present address: Stanford University, Stanford, CA 94305
+(1) Present address: GenScript Biotech Corporation, Piscataway, NJ, 08854  
+(2) Present address: University of California Los Angeles, Los Angeles, CA 90095  
+(3) Present address: Brigham and Women’s Hospital, Boston, MA 02115  
+(4) Present address: Stanford University, Stanford, CA 94305  
 
 $ To whom correspondence should be addressed: Daniel P. Dowling: Department of Chemistry, University of Massachusetts Boston, Boston MA 02125; daniel.dowling@umb.edu; Tel. (617) 287-5853; Fax. (617) 287-6030
 
