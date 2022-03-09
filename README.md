@@ -54,14 +54,15 @@ Laboratories:
 	- YbtCy2 at 2.35 Å resolution: PDB ID [7JUA](https://www.rcsb.org/structure/7JUA)
 
 - Structure Validation Files:
-	- 1.94 Å Structure
-	- 2.35 Å Structure
-
+	- 1.94 Å Structure  
+	- 2.35 Å Structure  
+  
 - PyMOL Session Files:
 	-
 
 *Model Preparation*  
 -------------------
+
 - BioLuminate Protein Preparation Wizard:
 	- 
 
