@@ -49,28 +49,28 @@ Laboratories:
 - Structures were phased using [PHASER](https://www.phaser.cimr.cam.ac.uk/index.php/Phaser_Crystallographic_Software) and PDB ID: [5T7Z](https://www.rcsb.org/structure/5T7Z).
 - Models were built using [Coot](https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/) with refinement in [PHENIX](https://phenix-online.org/documentation/reference/refinement.html).
 
-- Structures and maps available at the Research Collaboratory for Structural Bioinformatics ([RCSB](https://www.rcsb.org/))
+- ### Structures and maps available at the Research Collaboratory for Structural Bioinformatics ([RCSB](https://www.rcsb.org/))
 	- YbtCy2 at 1.94 Å resolution: PDB ID [7JTJ](https://www.rcsb.org/structure/7JTJ)
 	- YbtCy2 at 2.35 Å resolution: PDB ID [7JUA](https://www.rcsb.org/structure/7JUA)
 
-- Structure Validation Files:
+- ### Structure Validation Files:
 	- 1.94 Å Structure  
 	- 2.35 Å Structure  
   
-- PyMOL Session Files:
+- ### PyMOL Session Files:
 	-
 
 *Model Preparation*  
 -------------------
 
-- BioLuminate Protein Preparation Wizard:
+- ### BioLuminate Protein Preparation Wizard:
 	- 
 
 
 *Protein-Protein Docking*  
 -------------------------
 
-- HADDOCK2.4 Files:
+- ### HADDOCK2.4 Files:
 	- Donor PCP Docking:
 	- Acceptor PCP Docking:
 
@@ -78,24 +78,24 @@ Laboratories:
 *Cyclodehydration Intermediate Docking*  
 ---------------------------------------
 
-- Covalent Docking Files:
+- ### Covalent Docking Files:
 	- *file1*
 
-- Prime Minimization Files:
+- ### Prime Minimization Files:
 	- *file1*
 
-- Prime MM-GBSA Files:
+- ### Prime MM-GBSA Files:
 	- *file1*
 
 
 *Normal Mode Analysis*  
 ----------------------
 
-- Files:
+- ### Files:
 	- *file1*
 
 *Small-Molecule Fragment Hot Spots*  
 -----------------------------------
 
-- Files:
+- ### Files:
 	- *file1*
