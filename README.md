@@ -29,7 +29,7 @@ Laboratories:
 
 
 Contents:
-1. Structural Analysis (X-ray crysallography)
+1. Structural Analysis (X-ray crystallography)
 2. Model Preparation ([BioLuminate](https://www.schrodinger.com/products/bioluminate))
 3. Protein-Protein Docking ([HADDOCK2.4](https://wenmr.science.uu.nl/haddock2.4/))
 4. Cyclodehydration Intermediate Docking (Glide covalent docking and Prime minimization/MM-GBSA in [BioLuminate](https://www.schrodinger.com/products/bioluminate))
