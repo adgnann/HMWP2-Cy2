@@ -28,7 +28,7 @@ Laboratories:
 - PI: [Dominique Frueh](https://frueh.med.jhmi.edu/)
 
 
-Contents:
+## *Contents*:
 1. Structural Analysis (X-ray crystallography)
 2. Model Preparation ([BioLuminate](https://www.schrodinger.com/products/bioluminate))
 3. Protein-Protein Docking ([HADDOCK2.4](https://wenmr.science.uu.nl/haddock2.4/))
