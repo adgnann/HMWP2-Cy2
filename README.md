@@ -11,9 +11,9 @@ Structural and docking studies of a heterocyclization domain from NRPS/PKS sider
 ## Authors:
 Andrew D. Gnann (a), Yuan Xia (a,1), Jess Soule (a,2), Clara Barthélemy (a), Jayata Mawani (a), Sarah Nzikoba (a,3), Brian Castellano (b,4), Edward Brignole (b), Dominique Frueh (c), Daniel P. Dowling (a,$)
 
-a) Department of Chemistry, [University of Massachusetts Boston](https://www.umb.edu/), Boston MA 02125
-b) Department of Biology, [Massachusetts Institute of Technology](https://www.mit.edu/), Cambridge MA 02142
-c) Department of Biophysics and Biophysical Chemistry, [Johns Hopkins University](https://www.jhu.edu/) School of Medicine, Baltimore MD 21205
+-a) Department of Chemistry, [University of Massachusetts Boston](https://www.umb.edu/), Boston MA 02125
+-b) Department of Biology, [Massachusetts Institute of Technology](https://www.mit.edu/), Cambridge MA 02142
+-c) Department of Biophysics and Biophysical Chemistry, [Johns Hopkins University](https://www.jhu.edu/) School of Medicine, Baltimore MD 21205
 
 1. Present address: GenScript Biotech Corporation, Piscataway, NJ, 08854
 2. Present address: University of California Los Angeles, Los Angeles, CA 90095
