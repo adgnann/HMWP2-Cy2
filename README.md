@@ -8,7 +8,7 @@ Structural investigation of the second heterocyclization domain from yersiniabac
 
 *Associated Publication*:  
 -------------------------
-Structural and docking studies of a heterocyclization domain from NRPS/PKS siderophore biosynthesis offer a refined proposal of cyclodehydration intermediate binding
+Studies of a siderophore-producing cyclization domain: A refined proposal of substrate binding
 - Preprint: [bioRxiv, 2022]()
 
 *Authors*:  
