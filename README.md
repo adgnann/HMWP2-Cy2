@@ -44,7 +44,7 @@ Laboratories:
 
 *Structural Analysis*  
 ---------------------
-- X-ray crystallographic data were collected at the [MIT Crystallization and X-Ray Facility](http://web.mit.edu/cld/facilities/facilities.html) on a copper (k alpha) anode source and [NECAT](https://lilith.nec.aps.anl.gov/) beamline 24-ID-C.
+- X-ray crystallographic data were collected at the [MIT Crystallization and X-Ray Facility](http://web.mit.edu/cld/facilities/facilities.html) on a copper (k alpha) anode source and [NECAT](https://lilith.nec.aps.anl.gov/) beamline 24-ID-E.
 - Data were processed using [HKL2000](https://hkl-xray.com/hkl-2000).
 - Structures were phased using [PHASER](https://www.phaser.cimr.cam.ac.uk/index.php/Phaser_Crystallographic_Software) and PDB ID: [5T7Z](https://www.rcsb.org/structure/5T7Z).
 - Models were built using [Coot](https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/) with refinement in [PHENIX](https://phenix-online.org/documentation/reference/refinement.html).
