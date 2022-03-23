@@ -1,0 +1,5 @@
+HMWP2-Cy2 Low-Frequency Vibrational Normal Mode Videos
+
+Videos of modes 1-4 and 6-10 visualized with 80 frames per vibrational period, rendered in MPEG-4 format.
+
+Mode 5 is omitted because it involved only side-chain motion of a single surface residue, R1817.
