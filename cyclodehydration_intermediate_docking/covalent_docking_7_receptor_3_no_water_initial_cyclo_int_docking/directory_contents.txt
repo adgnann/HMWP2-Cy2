@@ -1,0 +1,13 @@
+.maegz and _lig.maegz both contain the ligand structures
+
+_rec.maegz contains the receptor structure
+
+.zip contains the automatic Glide docking grid generation files
+
+.inp file is the input parameters for docking
+
+.sh file is a run script
+
+.log files are the run logs (including the subjob log)
+
+-out.maegz contains the resulting receptor-ligand complexes
