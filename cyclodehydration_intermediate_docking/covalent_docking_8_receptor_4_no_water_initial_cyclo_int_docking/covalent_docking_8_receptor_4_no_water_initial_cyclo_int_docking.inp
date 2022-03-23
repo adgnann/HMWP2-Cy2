@@ -1,0 +1,17 @@
+REACTION_NAME                 Custom
+CUSTOM_CHEMISTRY              ('<1>', ('charge', 0, 1))
+CUSTOM_CHEMISTRY              ('<2>-[O;H1,-1]', ('delete', 2))
+CUSTOM_CHEMISTRY              ('<1>|<2>', ('bond', 1, (1, 2)))
+LIGAND_SMARTS_PATTERN         1,[P]-[O;H1,-1]
+RECEPTOR_SMARTS_PATTERN       2,[C,c]-[S,O;H1,-1]
+AFFINITY                      
+INIT_GSCORE_CUTOFF            2.5
+MAX_INIT_POSES                200
+OUTPUT_TOP                    1000
+NPOSES                        30
+REC_FILE                      covalent_docking_8_receptor_4_no_water_initial_cyclo_int_docking_rec.maegz
+LIG_FILE                      covalent_docking_8_receptor_4_no_water_initial_cyclo_int_docking_lig.maegz
+ATTACHMENT_RESIDUE            C:1977
+GRID_OPTION                   INNERBOX=10,10,10
+GRID_OPTION                   GRID_CENTER=-59.775113,-6.165997,-1.954236
+GRID_OPTION                   OUTERBOX=34.000000,34.000000,34.000000
