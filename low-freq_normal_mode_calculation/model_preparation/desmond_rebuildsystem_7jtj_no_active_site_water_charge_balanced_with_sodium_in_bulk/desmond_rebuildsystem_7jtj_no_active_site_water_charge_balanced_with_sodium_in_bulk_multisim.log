@@ -1,0 +1,103 @@
+Job launching command:
+$SCHRODINGER/utilities/multisim -JOBNAME desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk -PROJ /media/adgnann/860EVO_int/cy_low_modes_20211022/cy_low_modes_20211022.prj -DISP append -HOST localhost -m desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk.msj -o desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk.cms desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk.mae
+
+Booting the multisim workflow engine...
+           multisim version: 3.8.5.19
+            mmshare version: 5.2
+                    Jobname: desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk
+                   Username: adgnann
+            Master job host: undetected
+                Subjob host: localhost
+                     Job ID: Pauling-0-617a464f
+            multisim script: desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk.msj
+       Structure input file: desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk.mae
+            CPUs per subjob: "1"
+             Job start time: Thu Oct 28 02:42:44 2021
+           Launch directory: /media/adgnann/860EVO_int/cy_low_modes_20211022
+               $SCHRODINGER: /home/adgnann/schrodinger2020-4
+
+Parsing the multisim script file...
+
+Summary of user stages:
+  stage 1 - task
+  stage 2 - build_geometry
+  stage 3 - assign_forcefield
+  stage 4 - trim
+(4 stages in total)
+
+Workflow is started now.
+
+Stage 1 - task
+stage[1] task: Detecting system type...
+stage[1] task:   It seems a raw geometry for regular molecular dynamics simulations
+stage[1] task: Recognizing traits of system...
+stage[1] task:   (none)
+
+Stage 1 completed successfully.
+Stage 1 duration: 0h 0' 0"
+
+
+Stage 2 - build_geometry
+[running at reduced cpu priority]
+
+Stage 2 completed successfully.
+Stage 2 duration: 0h 0' 5"
+
+
+Stage 3 - assign_forcefield
+Running force_field_builder version 52144
+
+OPLS Version: OPLS3e
+FEP mode: 2
+FEP retain angle: 2
+Skip creating the fepio_fep block
+Reading input structures.
+Creating New ffio_ff block...
+Creating molsym
+Creating New ffio_ff block...
+Creating molsym
+Creating New ffio_ff block...
+Creating molsym
+
+force_field_builder: job successfully run
+
+viparr 1.5.1
+All FF directories, in order:
+ /home/adgnann/schrodinger2020-4/internal/lib/python3.8/site-packages/schrodinger/application/desmond/packages/viparr1/viparr-ff/ff/spc
+Plug-in directory: /home/adgnann/schrodinger2020-4/internal/lib/python3.8/site-packages/schrodinger/application/desmond/packages/viparr1/plugins
+Reading maestro file <desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk_3-out.cms_> ...
+Done reading maestro file
+Analyzing ct block 4
+Warning: Missing backward edges...adding them now
+******Constructing residue list for </home/adgnann/schrodinger2020-4/internal/lib/python3.8/site-packages/schrodinger/application/desmond/packages/viparr1/viparr-ff/ff/spc> Structure 4
+Note: Struct 4, Res <" ",1> (T3P) matched (SPC)
+Note: Struct 4, Res <" ",2> (T3P) matched (SPC)
+Note: Struct 4, Res <" ",3> (T3P) matched (SPC)
+Note: Struct 4, Res <" ",4> (T3P) matched (SPC)
+Note: Struct 4, Res <" ",5> (T3P) matched (SPC)
+Ignoring further messages for (T3P) matching (SPC)
+******Main loop: Structure 4
+Pre-processing force field </home/adgnann/schrodinger2020-4/internal/lib/python3.8/site-packages/schrodinger/application/desmond/packages/viparr1/viparr-ff/ff/spc> for rules and pseudos
+Processing force field </home/adgnann/schrodinger2020-4/internal/lib/python3.8/site-packages/schrodinger/application/desmond/packages/viparr1/viparr-ff/ff/spc>
+Compressing FF representation...
+Building mae data structure...
+Number of pseudo particles: 0
+Writing maestro file <desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk_3-out.cms_vp>
+2 ARITHMETIC/GEOMETRIC
+
+Stage 3 completed successfully.
+Stage 3 duration: 0h 3' 39"
+
+
+Stage 4 - trim
+
+Stage 4 completed successfully.
+Cleaning up files...
+
+Multisim summary (Thu Oct 28 02:46:30 2021):
+  Stage 1 completed.
+  Stage 2 completed.
+  Stage 3 completed.
+  Stage 4 completed.
+  Total duration: 0h 3' 46"
+Multisim completed.

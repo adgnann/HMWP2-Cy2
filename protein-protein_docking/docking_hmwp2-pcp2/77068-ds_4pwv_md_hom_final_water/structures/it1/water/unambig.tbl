@@ -1,0 +1,3 @@
+! Molecule #2 gap(s) restraint(s)
+assign (resid 1977 and name P and segid C) (resid 1977 and name CA and segid C) 0.000 0.000 0.000
+

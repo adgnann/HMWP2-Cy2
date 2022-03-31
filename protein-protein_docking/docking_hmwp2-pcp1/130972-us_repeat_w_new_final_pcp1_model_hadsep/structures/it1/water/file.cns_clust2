@@ -1,0 +1,27 @@
+module(filenames;)
+set message off echo off end
+evaluate ($count = 1)
+while ($count le 2000) loop main
+   evaluate (&filenames.bestfile_$count = "")
+   evaluate ($count = $count + 1)
+end loop main
+set message on echo on end
+evaluate (&filenames.bestfile_1="PREVIT:complex_198w.pdb")
+evaluate (&filenames.bestfile_2="PREVIT:complex_183w.pdb")
+evaluate (&filenames.bestfile_3="PREVIT:complex_140w.pdb")
+evaluate (&filenames.bestfile_4="PREVIT:complex_137w.pdb")
+evaluate (&filenames.bestfile_5="PREVIT:complex_134w.pdb")
+evaluate (&filenames.bestfile_6="PREVIT:complex_163w.pdb")
+evaluate (&filenames.bestfile_7="PREVIT:complex_82w.pdb")
+evaluate (&filenames.bestfile_8="PREVIT:complex_125w.pdb")
+evaluate (&filenames.bestfile_9="PREVIT:complex_154w.pdb")
+evaluate (&filenames.bestfile_10="PREVIT:complex_36w.pdb")
+evaluate (&filenames.bestfile_11="PREVIT:complex_144w.pdb")
+evaluate (&filenames.bestfile_12="PREVIT:complex_84w.pdb")
+evaluate (&filenames.bestfile_13="PREVIT:complex_89w.pdb")
+evaluate (&filenames.bestfile_14="PREVIT:complex_155w.pdb")
+evaluate (&filenames.bestfile_15="PREVIT:complex_73w.pdb")
+evaluate (&filenames.bestfile_16="PREVIT:complex_116w.pdb")
+evaluate (&filenames.bestfile_17="PREVIT:complex_139w.pdb")
+evaluate (&filenames.bestfile_18="PREVIT:complex_104w.pdb")
+evaluate (&filenames.bestfile_19="PREVIT:complex_153w.pdb")

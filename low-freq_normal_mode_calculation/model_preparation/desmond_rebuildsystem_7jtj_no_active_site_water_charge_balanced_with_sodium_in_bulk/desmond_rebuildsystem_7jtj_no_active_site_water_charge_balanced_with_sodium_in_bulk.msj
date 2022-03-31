@@ -1,0 +1,16 @@
+task {
+task = "desmond:auto"
+}
+
+build_geometry {
+rebuild_cms = yes
+override_forcefield = OPLS3e
+}
+
+assign_forcefield {
+forcefield = OPLS3e
+}
+
+trim {
+save = []
+}

@@ -1,0 +1,5 @@
+#Structure rmsd_all rmsd_Emin Einter Enb Evdw+0.1Eelec Evdw Eelec Eair Ecdih Ecoup Esani Evean Edani #NOEviol #Dihedviol #Coupviol #Veanviol #Daniviol BSA
+complex_190w.pdb 0.000 6.986 -593.421 -134.571 -28.7098 -16.9474 -117.624 51.596 0 0 0 0 0 1 0 0 0 0 646.345
+complex_80w.pdb 1.963 7.120 -412.147 -124.74 -39.3426 -29.854 -94.8856 51.153 0 0 0 0 0 1 0 0 0 0 1135.95
+complex_168w.pdb 1.668 7.093 -476.814 -129.346 -31.8272 -20.9918 -108.354 51.4472 0 0 0 0 0 1 0 0 0 0 748.461
+complex_49w.pdb 1.736 6.963 -488.324 -156.967 -32.1041 -18.2304 -138.737 50.5118 0 0 0 0 0 1 0 0 0 0 871.026

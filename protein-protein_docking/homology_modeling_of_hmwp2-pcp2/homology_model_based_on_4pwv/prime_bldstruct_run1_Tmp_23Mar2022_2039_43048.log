@@ -1,0 +1,577 @@
+==============================================================================
+  Prime version 6.2 (r144) Build Structure
+==============================================================================
+
+--------------------------------------------------------------------------------
+JobId          : Pauling-0-623bc2e4
+Name           : prime_bldstruct_run1_Tmp_23Mar2022_2039_43048
+Program        : BuildStructure
+Host           : Pauling
+Dir            : /home/adgnann/Documents/simulations/pcp2_hom_mod_checking_20220323
+HostEntry      : localhost
+JobHost        : Pauling
+JobDir         : /home/adgnann/tmp/adgnann/prime_bldstruct_run1_Tmp_23Mar2022_2039_43048
+JobSchrodinger : /home/adgnann/schrodinger2020-4
+Commandline    : /home/adgnann/schrodinger2020-4/prime -HOST localhost -PROJ /home/adgnann/.schrodinger/tmp/Tmp_23Mar2022_2039_43048 -DISP append prime_bldstruct_run1_Tmp_23Mar2022_2039_43048
+StartTime      : 2022-03-23-21:01:25
+--------------------------------------------------------------------------------
+
+Using the following input parameters:
+   JOB_TYPE MODEL
+   QUERY_OFFSET 0
+   TEMPLATE_NAME template1_B
+   template1_B_NUMBER 1
+   template1_B_STRUCT_FILE prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-pdbtemplate1.ent
+   template1_B_ALIGN_FILE prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-4PWV_B.align
+   template1_B_HETERO_0 KH4 B:101
+   DIR_NAME /home/adgnann/.schrodinger/tmp/Tmp_23Mar2022_2039_43048/.mmproj-admin/psp_run.1/step.4/current
+   TAILS 0
+   SIDE_OPT true
+   MINIMIZE true
+   BUILD_INSERTIONS false
+   MAX_INSERTION_SIZE 20
+   BUILD_TRANSITIONS true
+   BUILD_DELETIONS true
+   KEEP_ROTAMERS true
+   COMPOSITE_ARRAY 1111111111111111111111111111111111111111111111111111111111111111111111111
+   KNOWLEDGE_BASED false
+   TEMPLATE_RESIDUE_NUMBERS false
+
+Configuring template template1_B
+
+Loading template template1_B
+
+
+
+Initial model constructed.
+
+Preprocessing using PrepWizard...
+Now refining initial model...
+
+
+ Random Number Seed Set to:   1075441715
+ This is 25.0
+
+ Contents of the control file:
+   file outdir "/home/adgnann/tmp/adgnann/prime_bldstruct_run1_Tmp_23Mar2022_2039_43048"
+   file datadir "/home/adgnann/schrodinger2020-4/psp-v6.2/data/pop/"
+   file tempdir "templates/"
+   file usrtempdir "/home/adgnann/tmp/adgnann/prime_bldstruct_run1_Tmp_23Mar2022_2039_43048"
+   file logfile stdout
+   job prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld
+   energy para solvent vsgb1.0
+
+   homolog load "prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld-templ.align" "prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld-templ.pdb" chain A het KH4 Z:500  False   conserve yes tail full ssgaps yes sidemin yes minimize yes deletions yes transitions yes usrgap 19 20  verbose no ofac 0.70 initfile none gapfile none insertfile none multifile none x2pfile none sidefile none finalfile none
+   structure write "prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld-out.pdb"
+--Checked out   8 PSP Plop Tokens--
+
+ Here are the parameters chosen for homology model building:
+
+  BASIC MODEL BUILDING OPTIONS
+   Number of templates:            1
+    Template:            1
+     Alignment: prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld-templ.align
+     PDB file:  prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld-templ.pdb
+     Chain: A
+     Model:            1
+   Number of HET groups to be included:            1
+   Number of MOL groups to be included:            0
+   Minimum overlap factor:   0.700000000000000
+   Maximum angle deviations:    25.0000000000000
+   Gaps allowed within secondary structure.
+   Problematic X->P substitutions ignored.
+   Problematic G->X substitutions ignored.
+   Entire N-terminal tail retained.
+   Entire C-terminal tail retained.
+
+  I/O PARAMETERS
+
+  MINIMIZATION PARAMETERS
+   Minimization Algorithm: Automatic
+   Desired final RMS gradient:  0.100000000000000
+   Maximum number of iterations to achieve self-consistency:            2
+   Energy cutoff for determining self-consistency  0.100kcals/mol
+   Maximum number of TN iterations:           65
+   Iterations between NBlist/LR updates:            2
+   LR forces will be updated less frequently than SR.
+   NB list will be updated during minim.
+   SGB will be updated during minim.
+   Option for SGB update:            1
+   Born alpha will NOT be updated during minim
+   NB Clashes will be used in the preconditioning
+
+ NOW READING IN THE ALIGNMENT FILE ...
+
+ Alignment (from align file): Target vs Template
+
+AADESTVSLICDAFREVVGESVTPAENFFEAGATSLNLVQLHVLLQRHEFSTLTLLDLFTHPSPAALADYLAG
+AADESTVSLICDAFREVVGESVTPAENFFEAGATSLNLVQLHVLLQRHEFSTLTLLDLFTHPSPAALADYLAG
+
+ NOW READING IN THE TEMPLATE STRUCTURE ...
+ prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld-templ.pdb
+   Chain: A
+   Model:            1
+ HETATMs being ignored ...
+
+ Nonbonded initialization ...
+ Time for loading nb parameters:   1.167000000000001E-003
+ Build extended structure ...
+ Generating crosslinks ...
+ Initialize 1/4 list ...
+ Initialize parent/child list ...
+ Initialize covalent pointers ...
+ Initialize resinfo list ...
+ Initialize special atoms ...
+ Initialize rank list ...
+ Initialize sparse atom list ...
+
+ Times for various book-keeping steps:
+     build   0.216s
+     cross   0.000s
+     child   0.001s
+      iper   0.000s
+       rev   0.001s
+      info   0.000s
+     resat   0.000s
+      rank   0.000s
+     covpt   0.000s
+    sparse   0.001s
+ Time for assigning nb parameters:    0.001s
+
+ Number of protein chains       1
+   Number of residues          73
+       (charged)               13
+        (polar)                24
+       (glycine)                3
+     (hydrophobic)             33
+
+ Number of RNA chains           0
+   Number of nucleotides        0
+ Number of DNA chains           0
+   Number of nucleotides        0
+
+ Number of waters               0
+ Number of ions                 0
+ Number of HET                  0
+
+ Number of atoms             1113
+   [sparse atoms]              86
+
+ Number of bonds             1127
+ Number of angles            2020
+ Number of torsions          3202
+ Number of 1/4s              2935
+
+ Partial charges and molecular weights:
+  Protein chain            A      -8.0000    7823.8
+  Entire system                   -8.0000    7823.8
+
+ Time for secondary structure initialization   0.000s
+
+
+ Alignment (after reading template): Target vs Template
+
+AADESTVSLICDAFREVVGESVTPAENFFEAGATSLNLVQLHVLLQRHEFSTLTLLDLFTHPSPAALADYLAG
+AADESTVSLICDAFREVVGESVTPAENFFEAGATSLNLVQLHVLLQRHEFSTLTLLDLFTHPSPAALADYLAG
+
+ -----------------------------------------
+ Initializing the homology model...
+ -----------------------------------------
+
+ Total number of model residues:           73
+ Total number of identical model residues:           73
+
+ Total number of residues in MOLs:            0
+ Total number of residue in HETs:            1
+ Build extended structure ...
+ Generating crosslinks ...
+ Initialize 1/4 list ...
+ Initialize parent/child list ...
+ Initialize covalent pointers ...
+ Initialize resinfo list ...
+ ATTN: hetero res type KH4
+  not recognized - rotamer conformations will not be sampled.
+ Initialize special atoms ...
+ Initialize rank list ...
+ Initialize sparse atom list ...
+
+ Times for various book-keeping steps:
+     build   0.220s
+     cross   0.000s
+     child   0.001s
+      iper   0.000s
+       rev   0.001s
+      info   0.000s
+     resat   0.000s
+      rank   0.000s
+     covpt   0.000s
+    sparse   0.002s
+ Time for assigning nb parameters:    0.001s
+
+ Number of protein chains       1
+   Number of residues          73
+       (charged)               13
+        (polar)                24
+       (glycine)                3
+     (hydrophobic)             33
+
+ Number of RNA chains           0
+   Number of nucleotides        0
+ Number of DNA chains           0
+   Number of nucleotides        0
+
+ Number of waters               0
+ Number of ions                 0
+ Number of HET                  1
+
+ Number of atoms             1165
+   [sparse atoms]              91
+
+ Number of bonds             1179
+ Number of angles            2111
+ Number of torsions          3331
+ Number of 1/4s              3050
+
+ Partial charges and molecular weights:
+  Protein chain            A      -8.0000    7823.8
+  HET group      Z:KH4_500        -1.0000     435.4
+  Entire system                   -9.0000    8259.2
+
+ Time for secondary structure initialization   0.000s
+
+ Preparing for first energy calculation ...
+
+ Time for assigning nb parameters:    0.001s
+
+ Number of protein chains       1
+   Number of residues          73
+       (charged)               13
+        (polar)                24
+       (glycine)                3
+     (hydrophobic)             33
+
+ Number of RNA chains           0
+   Number of nucleotides        0
+ Number of DNA chains           0
+   Number of nucleotides        0
+
+ Number of waters               0
+ Number of ions                 0
+ Number of HET                  1
+
+ Number of atoms             1165
+   [sparse atoms]              91
+
+ Number of bonds             1179
+ Number of angles            2111
+ Number of torsions          3331
+ Number of 1/4s              3050
+
+ Partial charges and molecular weights:
+  Protein chain            A      -8.0000    7823.8
+  HET group      Z:KH4_500        -1.0000     435.4
+  Entire system                   -9.0000    8259.2
+
+ Time for secondary structure initialization   0.000s
+
+ Results of parameter assignment
+    type    tot   time
+    BOND   1179   0.00
+    ANGL   2111   0.00
+    TORS   3331   0.00
+
+ Here are the parameters that will be used:
+                      Solvent model   SGB
+                 Nonpolar estimator   SGB/NP
+               Variable Dielectric:   ENABLED
+                               LYS:    4.00
+                               GLU:    3.00
+                               ASP:    2.00
+                               HIP:    3.00
+                               HIS:    2.00
+                               ARG:    2.00
+                      Penalty terms   EXCLUDED
+                Internal dielectric    1.00
+                 Solvent dielectric   80.00
+                 Ionic strength (M)    0.00
+                 Debye length (Ang)     Inf
+     Short NB cut (neutral/neutral)   10.00
+      Long NB cut (neutral/neutral)   15.00
+      Short NB cut (charge/neutral)   10.00
+       Long NB cut (charge/neutral)   20.00
+       Short NB cut (charge/charge)   15.00
+        Long NB cut (charge/charge)   30.00
+             Short NB cut (reduced)    6.00
+              Long NB cut (reduced)   11.00
+          Rotamer Frequency Scoring   OFF
+
+ NOW REPORTING THE ENERGY (KCAL/MOL):
+ COVALENT ENERGIES:
+                BOND           ANGLE             TOR           TOTAL
+     COV     6010.079020      299.956578      243.189069     6553.224666
+     SGB     6158.923192    -2191.459997    -2396.550083     1570.913113
+   TOTAL    12169.002212    -1891.503419    -2153.361013     8124.137779
+    TIME        0.000s          0.000s          0.000s          0.000s
+
+ NONBONDED (INTRAMOLECULAR) ENERGIES:
+                  14           SHORT            LONG           TOTAL
+      LJ      446.935086 ***************      -20.502058 ***************
+      EL     2308.128430    -4247.446953      100.495150    -1838.823373
+     SGB    -2396.550083     2272.496135     -105.078327     -229.132275
+   TOTAL      358.513433 ***************      -25.085235 ***************
+    TIME        0.000s          0.000s          0.000s          0.000s
+
+ OTHER:
+SGB SELF    -4547.595894
+NONPOLAR       19.485861
+PROT COR        0.000000
+
+ SUM:
+ SGB TOT     -809.264974
+SOLV TOT     -789.779112
+  TOTALE   2432580185.674
+ [NOTE: TOTAL ENERGY = COV_TOT + NB_TOT + OTHER - SGB_14|SGB_TOR]
+
+ Here are the user-specified gaps:
+           1  A:GLY_19     A:GLU_20
+
+ Here are the gaps in alignment:
+          <none>
+
+ Here are the insertions in alignment:
+          <none>
+
+ Here are template transitions in alignment:
+          <none>
+
+ =============================================
+ Now attempting to build gaps ...
+ =============================================
+
+ ----------------------------------------------
+ Attempting to close gap:  A:GLY_19     A:GLU_20
+ Closure criterion for  A:GLY_19     A:GLU_20        7.23    3.94
+ WARNING:  this loop cannot close:  A:GLY_19     A:GLU_20
+
+ Expanding closure region ...
+ N-side:            0           0 T
+ C-side:            0           0 T
+ DONE:  A:VAL_18     A:GLU_20
+ Closure criterion for  A:VAL_18     A:GLU_20        8.41    7.36
+ WARNING:  this loop cannot close:  A:VAL_18     A:GLU_20
+
+ Expanding closure region ...
+ N-side:            1           4 T
+ C-side:            0           0 T
+ DONE:  A:VAL_18     A:SER_21
+ Closure criterion for  A:VAL_18     A:SER_21       10.84   10.82
+ WARNING:  this loop cannot close:  A:VAL_18     A:SER_21
+
+ Expanding closure region ...
+ N-side:            1           4 T
+ C-side:            1           0 T
+ DONE:  A:VAL_18     A:VAL_22
+ Closure criterion for  A:VAL_18     A:VAL_22        8.92   13.96
+
+Reconstructing gap region:  A:VAL_18     A:VAL_22     Overlap Factor:  0.70
+
+ ============================================
+ Now working on new loop ...
+ ============================================
+  A:VAL_18     A:VAL_22               5
+
+ Starting loop conformation:
+ A:VAL_18      -77.65    8.45 -174.61
+ A:GLY_19       39.42   76.34    6.92
+ ATTN:  above phi/psi not represented by library GLY
+     Actual angles   39.42   76.34
+   Closest rotamer   50.00   60.00
+             Delta   10.58  -16.34
+ A:GLU_20     -146.04  166.99 -171.49
+ A:SER_21       51.98   62.37  177.50
+ A:VAL_22      -90.94  123.44 -179.54
+      Cis peptide in   A:GLY_19           39.42       76.34        6.92
+       Gamma turn in   A:SER_21           51.98       62.37      177.50
+
+ ============================================
+ End of initial setup ...
+ ============================================
+ Report energy breakdown by residues:
+ INFO: the following energy terms include both contributions from
+ each residue itself, and interactions between each residue with
+ other residues. Thus the sum of energies by residues will not be
+ equal to the total energy
+      residue      bond     angle torsional        el        lj       sgb  nonpolar      lipo       tot
+ A:ALA_1           0.82      0.33      1.66    -61.80      0.54    -22.63      0.20      0.00    -80.88
+ A:ALA_2           0.26      1.59      2.43    -22.75     -0.44     -1.78     -1.58      0.00    -22.26
+ A:ASP_3           0.25      2.04      1.78     -7.31      7.56    -58.69      0.96      0.00    -53.41
+ large LJ energy for atom: A:GLU_4:_OE1          4463271.04176729
+ A:GLU_4           0.14      2.42      5.75    -12.294463492.99    -44.92      4.56      0.004463448.65
+ A:SER_5           0.36      0.89     -1.80    -18.90      3.25     -5.29     -0.76      0.00    -22.26
+ large LJ energy for atom: A:THR_6:_CB_          22206.3827767126
+ large LJ energy for atom: A:THR_6:_HB_          4440858.50283730
+ A:THR_6           0.48      1.65      5.63    -31.784463496.96      1.24     -0.76      0.004463473.41
+ A:VAL_7           0.09      2.41      3.07    -22.40      1.27     -1.02      0.41      0.00    -16.17
+ A:SER_8           0.16      0.80     -1.17    -17.70     -0.87     -3.97      0.35      0.00    -22.39
+ large LJ energy for atom: A:LEU_9:_CD2          4087.17680871947
+ large LJ energy for atom: A:LEU_9:HD21          54190.3135710041
+ A:LEU_9           0.20      5.85      3.73    -25.02  58404.16     -0.74      1.11      0.00  58389.29
+ A:ILE_10          0.20      4.55      7.80    -29.82      4.93     -0.21      0.10      0.00    -12.46
+ A:CYS_11          0.13      1.59     -2.15    -24.54      5.36     -1.86     -0.70      0.00    -22.16
+ A:ASP_12          0.11      2.27      2.30     -6.62      0.88    -56.92      8.29      0.00    -49.69
+ A:ALA_13          0.11      2.02      2.96    -33.69     -1.73     -1.22      0.11      0.00    -31.45
+ A:PHE_14          0.34      0.75      4.08    -28.64      5.33     -0.81     -0.33      0.00    -19.28
+ A:ARG_15          0.31      5.40      4.41    -75.17     -1.95     13.24     -7.13      0.00    -60.88
+ A:GLU_16          0.16      1.98      8.44     -3.80      0.54    -50.76      7.40      0.00    -36.05
+ A:VAL_17          0.36      2.86      4.46    -24.94    246.41     -2.03      0.32      0.00    227.44
+ A:VAL_18          0.29      3.49      2.50    -22.26     52.42      0.23      0.41      0.00     37.07
+ A:GLY_19          0.04      0.35      0.15    -26.05     -0.95     -2.30     -1.00      0.00    -29.77
+ A:GLU_20          9.68     11.77      6.70      0.10     18.51    -48.30      1.24      0.00     -0.29
+ A:SER_21          0.39      1.21     -2.38    -19.79     26.01     -1.45     -1.85      0.00      2.15
+ A:VAL_22          0.24      3.49      1.61    -24.65     25.60     -0.42     -0.34      0.00      5.53
+ A:THR_23          0.38      1.52      4.21    -12.65     21.60     -5.80     -0.62      0.00      8.64
+ A:PRO_24         20.79      8.34      4.51     -8.79    237.57     -1.67      0.46      0.00    261.22
+ A:ALA_25          0.17      2.22      2.03    -24.39      1.57     -2.45      0.45      0.00    -20.40
+ A:GLU_26          0.10      2.62      3.86     -5.32    107.07    -40.74      6.10      0.00     73.69
+ A:ASN_27          0.10      1.20     -0.04    -57.73      3.32     -2.28     -1.75      0.00    -57.19
+ A:PHE_28          0.58      1.11      1.40    -24.59    340.49     -0.40     -0.68      0.00    317.91
+ A:PHE_29          0.17      0.98      3.54    -26.54      5.28     -1.11     -1.05      0.00    -18.73
+ A:GLU_30          0.16      2.45      7.56     -5.20      2.32    -47.21      2.40      0.00    -37.53
+ A:ALA_31          0.21      1.46      1.12    -32.21     93.18     -1.81     -0.02      0.00     61.93
+ A:GLY_32          0.12      0.19      0.65    -30.05      1.93     -1.39     -0.11      0.00    -28.65
+ A:ALA_33          0.10      1.22      3.40    -31.61    140.88     -1.65     -0.49      0.00    111.84
+ A:THR_34          0.42      2.13      4.79    -28.67     35.65     -2.11     -0.97      0.00     11.26
+ large LJ energy for atom: A:SER_35:_OG_         112972021.493663
+ A:SER_35          0.23      2.25      6.44    -20.65**********     -2.19     -1.22      0.00**********
+ A:LEU_36          0.18      5.02      6.99    -22.56     15.34     -1.90     -0.04      0.00      3.04
+ A:ASN_37          0.13      2.23      2.04    -57.93    480.90     -2.20     -0.99      0.00    424.18
+ A:LEU_38          0.26      5.54      3.03    -31.06     -0.64      0.27      0.48      0.00    -22.12
+ A:VAL_39          0.07      2.63      3.45    -27.43      7.15     -0.39      0.98      0.00    -13.52
+ A:GLN_40          0.17      3.35      4.02    -60.26     -1.04     -7.89      1.38      0.00    -60.28
+ A:LEU_41          0.14      4.93      4.01    -30.57     -5.65      0.05      0.17      0.00    -26.92
+ A:HIS_42          1.13      9.01      2.46    -30.38    108.87     -2.69     -1.19      0.00     87.22
+ A:VAL_43          0.16      2.61      2.75    -26.16      5.80     -0.16      1.11      0.00    -13.90
+ A:LEU_44          0.24      5.65      3.79    -30.38     -2.73      1.08      1.09      0.00    -21.27
+ A:LEU_45          0.30      5.74      3.27    -27.85     40.42     -0.38      0.37      0.00     21.87
+ A:GLN_46          0.17      3.11      4.22    -62.87     -4.06     -5.14     -2.45      0.00    -67.02
+ A:ARG_47          0.29      5.34      5.30    -64.90     -0.93      2.43     -6.99      0.00    -59.48
+ large LJ energy for atom: A:HIS_48:_CE1         38052.6062821377
+ large LJ energy for atom: A:HIS_48:_HE1         20284.7309178332
+ A:HIS_48          1.07      8.79      2.09    -31.78  58404.65     -2.79     -2.04      0.00  58380.00
+ large LJ energy for atom: A:GLU_49:_CG_         2243.69338139314
+ large LJ energy for atom: A:GLU_49:_HG2         2521.52403636213
+ large LJ energy for atom: A:GLU_49:_CD_         68769.1449253804
+ large LJ energy for atom: A:GLU_49:_OE1         46943425.8840392
+ large LJ energy for atom: A:GLU_49:_OE2         684651600.624671
+ A:GLU_49          0.17      2.99      4.54     18.90**********    -48.69      5.15      0.00**********
+ A:PHE_50          0.47      1.52      0.77    -28.51     24.15     -2.79      0.69      0.00     -3.71
+ A:SER_51          0.42      0.83     -2.34    -25.03      0.00      2.31     -1.46      0.00    -25.26
+ A:THR_52          0.38      1.72      4.23    -15.73      1.41     -7.06     -0.84      0.00    -15.90
+ A:LEU_53          0.20      4.32      4.23    -24.10    158.09      2.40     -1.06      0.00    144.08
+ A:THR_54          0.40      1.66      3.27    -23.99      1.27     -2.66     -0.84      0.00    -20.89
+ A:LEU_55          0.08      4.02      2.68    -18.60     -0.07     -2.72      0.15      0.00    -14.46
+ A:LEU_56          0.29      5.40      3.51    -22.87      0.62     -1.87      0.72      0.00    -14.21
+ A:ASP_57          0.08      1.98     -1.97     -8.06      1.47    -58.59      7.75      0.00    -57.35
+ A:LEU_58          0.16      5.81      3.56    -28.17      1.20     -0.68     -0.08      0.00    -18.19
+ A:PHE_59          0.26      1.43      1.19    -31.01      3.76     -2.08      0.22      0.00    -26.21
+ A:THR_60          0.42      1.59      4.87    -26.97      3.08     -1.64      0.40      0.00    -18.27
+ A:HIS_61          0.81      9.87      5.94    -16.81      8.91     -4.45     -1.97      0.00      2.30
+ A:PRO_62          0.49      7.21     16.76    -17.64      4.59      0.92      0.22      0.00     12.55
+ A:SER_63          0.41      1.05     -1.04     -9.83     13.65     -1.39     -0.57      0.00      2.28
+ A:PRO_64         31.10     13.04      6.08    -12.76    242.15     -1.19      0.11      0.00    278.52
+ A:ALA_65          0.10      1.71      3.30    -25.90     -0.84     -2.60      0.54      0.00    -23.69
+ A:ALA_66          0.11      1.65      2.92    -28.60      7.69     -3.56     -0.03      0.00    -19.80
+ A:LEU_67          0.15      3.81      4.56    -28.05     -3.63     -2.45      0.06      0.00    -25.55
+ A:ALA_68          0.07      1.51      3.00    -28.82     -1.23     -2.81      0.05      0.00    -28.23
+ A:ASP_69          0.23      2.16      2.44      0.08      2.05    -74.26      2.27      0.00    -65.03
+ A:TYR_70          0.43      2.37      1.48    -31.73      2.80     -5.10     -0.98      0.00    -30.73
+ large LJ energy for atom: A:LEU_71:_CG_         32942.9077674681
+ large LJ energy for atom: A:LEU_71:_CD1         45793877.6270335
+ large LJ energy for atom: A:LEU_71:HD11         7782.86749748830
+ large LJ energy for atom: A:LEU_71:HD13         1170082.35453783
+ large LJ energy for atom: A:LEU_71:_CD2         684545682.453884
+ large LJ energy for atom: A:LEU_71:HD21         115805.245416772
+ large LJ energy for atom: A:LEU_71:HD23         2069.67153422668
+ A:LEU_71          0.24      5.73      3.25    -10.13**********     -3.39      0.79      0.00**********
+ A:ALA_72          0.13      1.32      3.78    -25.54      1.44     -4.35      0.58      0.00    -22.65
+ A:GLY_73          4.97      0.85      0.06     35.49      0.28    -78.51      2.90      0.00    -33.96
+ large LJ energy for atom: Z:KH4_500:_P__        3148.96327229994
+ large LJ energy for atom: Z:KH4_500:_HP_        112968991.909057
+ Z:KH4_500        58.65     26.92      1.36    -20.04**********    -97.61     -4.75      0.00**********
+ Gap closure SUCCEEDED!
+
+ =============================================
+ Now reporting the model buildup ...
+ =============================================
+
+ Here are the gaps that have been closed:
+    1 A:GLY_19     A:GLU_20     A:VAL_18     A:VAL_22        4.12 SUCCESS
+
+ Here are the template transitions that have been closed:
+
+ Here are the insertions that have been built:
+
+ =============================================
+ Now optimizing side chains ...
+ =============================================
+
+ =============================================
+ Now minimizing non-template regions ...
+ =============================================
+
+ Number of free atoms:         710
+ Number of residues being involved:          74
+ Distorted hydrogen angle detected  A:ALA_33:_CA_      - A:ALA_33:_CB_      -
+  A:ALA_33:_HB1
+ Distorted hydrogen angle detected  A:ALA_33:_CA_      - A:ALA_33:_CB_      -
+  A:ALA_33:_HB1
+
+ =============================================
+ Now checking the final model ...
+ =============================================
+
+ NOW REPORTING THE ENERGY (KCAL/MOL):
+ COVALENT ENERGIES:
+                BOND           ANGLE             TOR           TOTAL
+     COV       59.444749      231.951597      241.541048      532.937394
+     SGB     5978.521071    -2160.368308    -2367.802932     1450.349831
+   TOTAL     6037.965819    -1928.416711    -2126.261883     1983.287225
+    TIME        0.000s          0.000s          0.000s          0.000s
+
+ NONBONDED (INTRAMOLECULAR) ENERGIES:
+                  14           SHORT            LONG           TOTAL
+      LJ      429.703422     5901.105137      -21.155760     6309.652799
+      EL     2356.436812    -4517.690371       97.162697    -2064.090861
+     SGB    -2367.802932     2279.705301     -100.150778     -188.248409
+   TOTAL      418.337303     3663.120068      -24.143841     4057.313529
+    TIME        0.000s          0.000s          0.000s          0.000s
+
+ OTHER:
+SGB SELF    -4399.110119
+NONPOLAR       30.523931
+PROT COR        0.000000
+
+ SUM:
+ SGB TOT     -769.205765
+SOLV TOT     -738.681834
+  TOTALE   4039.817498221
+ [NOTE: TOTAL ENERGY = COV_TOT + NB_TOT + OTHER - SGB_14|SGB_TOR]
+
+ TOTAL TIME ELAPSED: prime_bldstruct_run1_Tmp_23Mar2022_2039_43048-bld          17.254s
+ RETURNED LICENSE
+[running at reduced cpu priority]
+
+Backend successfully completed
+
+
+Homology model building job complete.
+
+Output structure is colored by residue
+Blue  --  Full residue conformation is copied from the template
+          Identical residues at this position in the alignment
+Cyan  --  Residue Backbone Conformation is copied from the template
+          Sidechain mutation at this position in the alignment
+Red   --  Residue backbone and sidechain positions have been modeled
+          An insertion, deletion or experimental constraint requires
+          this position in the alignment to be predicted
+

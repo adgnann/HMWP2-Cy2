@@ -1,0 +1,43 @@
+========================================================
+HMWP2-PCP1 Model Preparation for Protein-Protein Docking
+========================================================
+
+The files and directories below are listed in roughly chronological order of their use in preparing
+the HMWP2-PCP1 model for protein-protein docking at the upstream tunnel entrance of HMWP2-Cy2.
+
+Each entry is formatted as:
+
+Directory/File: [Name]
+- Description
+
+------------------------------------------------------------------------------------------------------
+
+File: preparing_hmwp2-pcp1_nmr_bundle_representative.maegz
+-   This file contains models from steps used to prepare the initial HMWP2-PCP1 model with
+    phosphoserine. The models are:
+	* The NMR bundle representative from PDB ID 5U3H, model 1 (*_representative)
+	* The output from preprocessing in the BioLuminate Protein Preparation Wizard (*_preprocessed),
+	  which includes hydrogen atoms, charge assignment, and correct bond orders.
+	* Output from hydrogen-bond optimization in the Protein Preparation Wizard (*_hbond-opt)
+	* Output from potential energy minimization of hydrogen coordinates in Impact in the Protein
+	  Preparation Wizard (*_H-minimized)
+	* Output from the potential energy minimziation of all atomic coordinates in Impact in the
+	  Protein Preparation Wizard, with the minimization truncated in the step before heavy atom
+	  RMSDs reached 0.3 Angstrom (*_H-minimized_-_minimized)
+    * The model with a phosphate installed at the Ppant attachment site (*_w_phosphoserine)
+    * The phosphoserine model preprocessed using the Protein Preparation Wizard
+      (*_w_phosphoserine_preprocessed)
+
+Directory: prime_mini_1_pcp1-phosphoserine-only/
+-	This directory contains run files and output from Prime refinement of the phosphoserine of the
+    prepared NMR bundle representative.
+
+File: preparing_hmwp2-pcp1_nmr_bundle_representative_after_phosphoserine_refinement.maegz
+-   This file contains models from steps used to prepare the refined phosphoserine model from
+    prime_mini_1_pcp1-phosphoserine-only. The models are:
+    * Output from hydrogen-bond optimization in the Protein Preparation Wizard (*_hbond-opt)
+	* Output from potential energy minimization of hydrogen coordinates in Impact in the Protein
+	  Preparation Wizard (*_H-minimized)
+	* Output from the potential energy minimziation of all atomic coordinates in Impact in the
+	  Protein Preparation Wizard, with the minimization truncated in the step before heavy atom
+	  RMSDs reached 0.3 Angstrom (*_H-minimized_-_minimized)

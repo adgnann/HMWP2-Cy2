@@ -1,0 +1,9 @@
+#!/bin/csh
+setenv CURRIT 0
+setenv NEWIT 
+setenv PREVIT
+setenv RUN ./
+setenv BEGIN ./begin/
+setenv TEMPTRASH $RUN
+protocols/cns1 < /trinity/home/enmr/csb_webserver/data/runs/haddock24/userrun00130972/run1/complex_run1_generate_1.inp >! /trinity/home/enmr/csb_webserver/data/runs/haddock24/userrun00130972/run1/begin/generate_1.out
+          

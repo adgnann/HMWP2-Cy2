@@ -1,0 +1,949 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>HADDOCK webserver</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="description" content="The HADDOCK webserver brings the power of biomolecular docking to your desktop"/>
+  <meta name="author" content="NMR Spectroscopy Deaprtment, Utrecht University"/>
+  <meta name="keywords" content="NMR department Utrecht, HADDOCK, Whiskey, 3DDART, biomolecular docking, NMR"/>
+  <link rel="stylesheet" type="text/css" media="print" href="/Main/print.css"/>
+  <link rel="stylesheet" type="text/css" media="screen, projection" href="https://milou.science.uu.nl/Main/mainstyle-CSB.css"/>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://milou.science.uu.nl/Main/haddock.rss" />
+  <link rel="home" href="http://www.wenmr.eu" title="Home" />
+  <link rel="Shortcut icon" href="/Images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Page specific modification to the general CSS style -->
+  <style type="text/css">
+    .blue body { background-image:url("https://milou.science.uu.nl/Images/body-background.gif"); }
+        .blue #path a:hover { color:#EBF8C9; }
+        .blue #path a, #path strong, #path li { color:#99CCD5; }
+	.blue #path { background-image:url("https://milou.science.uu.nl/Images/path-blue.png"); }
+	.blue #header { height:150px; background-image:url("https://milou.science.uu.nl/Images/header-enmr.png"); }
+        .blue #path a:hover { color:#EBF8C9; }
+        .blue #path a, #path strong, #path li { color:#99CCD5; }
+        .blue #navbar a { color:#99CCD5; }
+        .blue #navbar { border-color:#001A3B; }
+	.blue #navbar { color:#99CCD5;  background-image:url("https://milou.science.uu.nl/Images/navbar-blue.png"); }
+	.blue #navbar a:hover { background-image:url("https://milou.science.uu.nl/Images/navbarshadow-blue.png"); }
+	.blue #navbar .current a { color:#FFFFFF; background-image:url("https://milou.science.uu.nl/Images/navbarshadow-blue2.png"); }
+	.blue #subheader { color:#001A3B; background-image:url("https://milou.science.uu.nl/Images/subheader-blue.png"); }
+        .blue #subheader span, #subheadersidebar { color:#001A3B; }
+	.blue #footer { color:#EBF8C9; background:#96ACC4; }
+        .blue #rssfeed { background:url(https://milou.science.uu.nl/Images/rssicon-blue.png) no-repeat 0 0; }
+	.blue .container { background:#FFFFFF; }
+        .blue .onsitelink, .onsitelink:visited { background:url("https://milou.science.uu.nl/Images/docicon-blue-off.png") no-repeat 0 0; }
+        .blue .offsitelink, .offsitelink:visited { background:url("https://milou.science.uu.nl/Images/linkicon-blue-off.png") no-repeat 0 0; }
+        .blue .emaillink, .emaillink:visited { background:url("https://milou.science.uu.nl/Images/emailicon-blue-off.png") no-repeat 0 0; }
+        .blue a.onsitelink:hover { background:url("https://milou.science.uu.nl/Images/docicon-blue-on.png") no-repeat 0 0; }
+        .blue a.offsitelink:hover { background:url("https://milou.science.uu.nl/Images/linkicon-blue-on.png") no-repeat 0 0; }
+        .blue a.emaillink:hover { background:url("https://milou.science.uu.nl/Images/emailicon-blue-on.png") no-repeat 0 0; }
+        .blue dt, dt a { color:#001A3B }
+        .blue .topItem  { background-color:#001C47 }
+    .blue {color: #FFFFFF}
+    .rating{
+      cursor: pointer;
+      vertical-align: bottom;
+    }
+    .rating:hover{
+      color: #888888;
+    }
+    #rated{
+      display: none;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('body').on('click','.rating',    function (e){
+        e.stopImmediatePropagation();
+        $(".rating").hide();
+        $.ajax({
+          url: "https://milou.science.uu.nl/cgi-bin/satisfaction.cgi",
+          type: 'GET',
+          data:{rating:e.target.id.substring(6)},
+          async:true,
+          }).done(function (data) {
+                  $("#rated").show();
+          }).fail(function () {
+                  $(".rating").show();
+          });
+      });
+    });
+    function createCORSRequest(method, url){
+      var xhr = new XMLHttpRequest();
+      if ("withCredentials" in xhr) {
+        // Check if the XMLHttpRequest object has a "withCredentials" property.
+        // "withCredentials" only exists on XMLHTTPRequest2 objects.
+        xhr.open(method, url, true);
+      } else if (typeof XDomainRequest != "undefined") {
+        // Otherwise, check if XDomainRequest.
+        // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+      } else {
+        // Otherwise, CORS is not supported by the browser.
+	xhr = null;
+      }
+      return xhr;
+    }
+    function makeCorsRequest(url, callback, src) {
+      // This is a sample server that supports CORS.
+      var xhr = createCORSRequest('GET', url);
+      if (!xhr) {
+        alert('CORS not supported');
+        return;
+      }
+      // Response handlers.
+      xhr.onload = function() {
+        var text = xhr.responseText;
+        //alert('Response from CORS request to ' + url + ': ' + text);
+        callback(text, src);
+      };
+
+      xhr.onerror = function() {
+        alert('Woops, there was an error making the request. Ready state: '+xhr.readyState+" Status: "+xhr.status+" Response: "+xhr.responseText);
+      };
+      xhr.send();
+      return xhr;
+    }
+    function printResponse(response, src){
+        var parsed = JSON.parse(response);
+        console.log(parsed);
+        console.log(src);
+        src.parent().parent().append('<td><a href="https://3dbionotes.cnb.csic.es/programmatic/get/'+parsed.id+'" target="_blank"><b>id: '+parsed.id+'</b></a></td>');
+    }
+    $(function() {
+      $(".3dbionotes").click( function() {
+        console.log(this.id);
+        var pdb = this.id;
+        var src = $(this);
+        console.log("https://3dbionotes.cnb.csic.es/programmatic/fetch?url=https://<?php $url=$_SERVER['REQUEST_URI'] ; echo $_SERVER['SERVER_NAME'].$url ?>/"+pdb+"&title="+pdb);
+        response = makeCorsRequest("https://3dbionotes.cnb.csic.es/programmatic/fetch?url=https://<?php $url=$_SERVER['REQUEST_URI'] ; echo $_SERVER['SERVER_NAME'].$url ?>/"+pdb+"&title="+pdb, printResponse, src);
+        });
+    });
+  </script> 
+</head>
+ 
+ <body class="blue">
+  <div id="col1" class="container">
+   <div id="path">
+     <ul>
+     <li><a href="http://www.wenmr.eu">home</a></li>
+     <li><a href="http://milou.science.uu.nl/enmr/services/HADDOCK2.2">HADDOCK2.2</a></li>
+     <li><a href="./">HADDOCK results</a></li>
+    </ul> 
+   </div>
+   <div id="header">
+    <div style="padding-top:40px; padding-left:30px; color:white; font-size:350%; font-weight:bold; z-index:2">HADDOCK2.2</div>
+    <div style="padding-top:20px; padding-left:50px; color:white; font-size:200%; z-index:2">WeNMR/West-Life GRID-enabled web portal</div>
+   </div>
+   <div id="navbar">
+    <ul>
+      <li><a href="http://www.wenmr.eu">WeNMR home</a></li>
+      <li><a href="http://www.west-life.eu">West-Life home</a></li>
+      <li><a href="https://about.west-life.eu/network/west-life/services">West-Life services</a></li>
+      <li><a href="http://milou.science.uu.nl/enmr/services/HADDOCK2.2">HADDOCK2.2</a></li>
+      <li><a href="http://www.bonvinlab.org/education">HADDOCK tutorials</a></li>
+      <li><a href="http://ask.bioexcel.eu">HADDOCK Support Center</a></li>
+    </ul>
+   </div>
+   <div id="subheader">
+    <ul>
+     <li><span>Welcome to the Utrecht Biomolecular Interaction web portal &gt;&gt;</span></li>
+    </ul>
+   </div>
+   <div id="content">
+    <div id="http://milou.science.uu.nl/Maincol"> 
+      
+     <!-- Import run specific docking results here -->
+     <dl class="intro">
+      <dd style="text-align:center; font-size:120%"><strong>HADDOCK server status for docking run /6130302451/77068-ds_4pwv_md_hom_final_water</strong></dd>
+      <dd><strong>Status: FINISHED</strong></dd>
+      <dd>Your HADDOCK run has successfully completed. The complete run can be downloaded as a gzipped tar file <a href=https://wenmr.science.uu.nl/haddock2.4/run/6130302451/77068-ds_4pwv_md_hom_final_water.tgz><b>here</b></a> 
+       (Note that there might be a delay in the generation of this archive - in case of errors try again). 
+       The file containing your docking parameters is <a href=./job_params.json><b>here</b></a>. </dd>
+       <dd></dd>
+       <dd> Please cite the following papers in your work: <br>
+       <ul>
+       <li>G.C.P van Zundert, J.P.G.L.M. Rodrigues, M. Trellet, C. Schmitz, P.L. Kastritis, E. Karaca, A.S.J. Melquiond, M. van Dijk, S.J. de Vries and A.M.J.J. Bonvin (2016).
+          "<a href="http://dx.doi.org/doi:10.1016/j.jmb.2015.09.014">The HADDOCK2.2 webserver: User-friendly integrative modeling of biomolecular complexes</a>."<br>
+          <em>J. Mol. Biol.</em>, <strong>428</strong>, 720-725 (2015).</li>
+       <li> Wassenaar <i>et al.</i>, <a href="http://link.springer.com/article/10.1007/s10723-012-9246-z">WeNMR: Structural Biology on the Grid.</a><br><em>J. Grid. Comp.</em>, <strong>10</strong>, 743-767 (2012).  </li>
+       </ul>
+       </dd>
+       <dd> And for the use of the WeNMR Grid resources please please add the following acknowledgement:<br>
+       <i>"The FP7 <a href="http://www.wenmr.eu">WeNMR</a> (project# 261572), H2020 <a href="http://www.west-life.eu">West-Life</a> (project# 675858) and the <a href="http://eosc-hub.eu">EOSC-hub</a> (project# 777536) European e-Infrastructure projects are acknowledged for the use of their web portals, which make use of the <a href="http://www.egi.eu">EGI</a> infrastructure with the dedicated support of CESNET-MetaCloud, INFN-PADOVA, NCG-INGRID-PT, TW-NCHC, SURFsara and NIKHEF, and the additional support of the national GRID Initiatives of Belgium, France, Italy, Germany, the Netherlands, Poland, Portugal, Spain, UK, Taiwan and the US Open Science Grid."</i>
+       </dd>
+       <dd ><b style="padding-right: 15px;" >How would you rate your experience with our portal? </b>
+                <i id="rating1" class="rating material-icons">sentiment_very_dissatisfied</i>
+                <i id="rating2" class="rating material-icons">sentiment_dissatisfied</i>
+                <i id="rating3" class="rating material-icons">sentiment_neutral</i>
+                <i id="rating4" class="rating material-icons">sentiment_satisfied</i>
+                <i id="rating5" class="rating material-icons">sentiment_very_satisfied</i>
+                <span id="rated"> Thank you!<i class="material-icons" style="vertical-align: bottom;">done</i></span>
+       </dd>
+       <dd><strong>Questions / feedback ? </strong><a href="http://ask.bioexcel.eu"> ask.bioexcel.eu</a></dd>
+       <dd><strong>Please also consider giving us some feedback by filling our <a href="http://goo.gl/0qE0xl">online survey</a>.</dd>
+       <dd><strong>Summary</strong></dd>
+       <dd>HADDOCK clustered<b> 152 </b>structures in<b> 10 </b>cluster(s), which represents<b> 76.0 &#37; </b>of the water-refined models HADDOCK generated. Note that currently the maximum number of models considered for clustering is 200.</dd>
+       <?php $min_size = 4;
+       if(strcmp($min_size, "3") == 0 || strcmp($min_size, "2") == 0 || strcmp($min_size, "1") == 0) : ?>
+       <dd><b> WARNING</b>: Clustering with default parameters did not produce any cluster, cluster minimum size went from <b>4</b> to <b><?php echo $min_size; ?></b></dd>
+       <?php endif; ?>
+       <dd>The statistics of the top 10 clusters are shown below. The top cluster is the most reliable according to HADDOCK. 
+           Its Z-score indicates how many standard deviations from the average this cluster is located in terms of score 
+           (the more negative the better).
+       </dd> 
+       <dd>A <a href="#graphics">graphical representation</a> of the results is also provided at the bottom of the page.
+       </dd>
+      </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 5</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-193.3 +/- 8.4</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>10</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>1.1 +/- 0.6</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-39.1 +/- 5.9</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-190.0 +/- 38.0</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-1.8 +/- 2.7</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>47.9 +/- 1.23</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>1303.5 +/- 163.8</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>-1.7 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster5_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster5_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster5_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster5_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster5_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster5_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster5_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster5_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 2</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-183.2 +/- 6.5</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>34</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>6.2 +/- 0.1</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-37.5 +/- 6.1</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-194.3 +/- 20.2</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-16.2 +/- 3.3</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>47.9 +/- 0.87</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>1404.9 +/- 88.2</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>-1.3 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster2_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster2_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster2_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster2_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster2_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster2_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster2_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster2_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 1</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-165.6 +/- 2.3</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>40</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>7.2 +/- 0.1</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-31.1 +/- 5.3</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-214.4 +/- 30.2</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-9.3 +/- 2.2</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>50.1 +/- 0.82</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>1197.8 +/- 90.7</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>-0.6 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster1_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster1_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster1_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster1_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster1_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster1_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster1_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster1_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 7</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-162.9 +/- 14.9</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>8</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>6.2 +/- 0.3</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-36.2 +/- 5.8</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-128.0 +/- 33.1</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-16.5 +/- 2.4</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>49.2 +/- 2.25</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>1226.2 +/- 117.4</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>-0.5 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster7_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster7_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster7_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster7_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster7_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster7_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster7_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster7_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 4</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-151.1 +/- 8.6</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>10</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>7.1 +/- 0.1</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-22.6 +/- 5.7</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-212.2 +/- 23.0</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-7.7 +/- 3.4</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>50.4 +/- 1.52</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>1034.2 +/- 114.9</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>-0.1 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster4_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster4_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster4_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster4_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster4_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster4_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster4_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster4_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 9</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-146.4 +/- 13.3</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>5</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>6.3 +/- 0.4</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-25.1 +/- 4.4</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-171.3 +/- 24.8</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-6.9 +/- 3.3</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>48.8 +/- 0.92</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>1102.8 +/- 107.5</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>0.1 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster9_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster9_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster9_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster9_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster9_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster9_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster9_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster9_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 3</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-130.8 +/- 12.6</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>16</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>7.4 +/- 0.2</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-15.8 +/- 4.1</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-182.3 +/- 57.0</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-7.3 +/- 3.3</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>49.9 +/- 0.34</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>768.9 +/- 51.1</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>0.7 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster3_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster3_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster3_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster3_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster3_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster3_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster3_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster3_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 8</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-124.6 +/- 4.1</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>6</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>7.3 +/- 0.2</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-20.8 +/- 7.6</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-143.5 +/- 37.3</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-11.6 +/- 8.2</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>48.7 +/- 1.15</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>850.1 +/- 110.5</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>0.9 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster8_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster8_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster8_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster8_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster8_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster8_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster8_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster8_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 6</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-118.9 +/- 13.5</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>9</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>4.2 +/- 0.1</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-30.2 +/- 4.9</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-77.4 +/- 28.2</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-18.1 +/- 3.8</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>48.2 +/- 1.07</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>891.3 +/- 86.3</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>1.1 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster6_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster6_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster6_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster6_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster6_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster6_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster6_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster6_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+    <dl class="textblock">
+	  <dt>Cluster 10</dt>
+      <br />
+      <table border="0">
+       <tr>
+         <td width="60%">HADDOCK score</td>
+         <td width="40%">-109.5 +/- 13.7</td>
+       </tr>
+       <tr>
+         <td>Cluster size</td>
+         <td>4</td>
+       </tr>
+       <tr>
+         <td>RMSD from the overall lowest-energy structure</td>
+         <td>7.0 +/- 0.2</td>
+       </tr>
+       <tr>
+         <td>Van der Waals energy</td>
+         <td>-20.2 +/- 6.9</td>
+       </tr>
+       <tr>
+         <td>Electrostatic energy</td>
+         <td>-124.3 +/- 29.2</td>
+       </tr>
+       <tr>
+         <td>Desolvation energy</td>
+         <td>-13.9 +/- 4.3</td>
+       </tr>
+       <tr>
+         <td>Restraints violation energy</td>
+         <td>50.0 +/- 2.88</td>
+       </tr>
+       <tr>
+         <td>Buried Surface Area</td>
+         <td>822.6 +/- 141.7</td>
+       </tr>
+       <tr>
+         <td>Z-Score</td>
+         <td>1.5 </td>
+       </tr>       
+      </table>
+     <br /> 
+     <table border="0">
+      <tr>
+        <td>Nr 1 best structure</td>
+        <td><a href="./cluster10_1.pdb">Download structure</a></td>
+	<td><a href="javascript:void(0)" id="cluster10_1.pdb" class="3dbionotes"><img height=30 src="https://milou.science.uu.nl/Images/3DBionotes-WestLife-logo.jpg"></img></a></td>
+      </tr>
+      <?php $filename = "cluster10_2.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 2 best structure</td>
+        <td><a href="./cluster10_2.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster10_3.pdb"; 
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 3 best structure</td>
+        <td><a href="./cluster10_3.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+      <?php $filename = "cluster10_4.pdb";
+      if(!empty($filename)) : ?>
+      <tr>
+        <td>Nr 4 best structure</td>
+        <td><a href="./cluster10_4.pdb">Download structure</a></td>
+      </tr>
+      <?php endif; ?>
+     </table>
+	 </dl>
+
+/trinity/home/enmr/csb_webserver/data/results/haddock24/6130302451/77068-ds_4pwv_md_hom_final_water/structures/it1/water
+
+Processing done
+/trinity/home/enmr/csb_webserver/data/results/haddock24/6130302451/77068-ds_4pwv_md_hom_final_water/structures/it1/water/analysis
+	 <dd style="text-align:center"><strong>Note that HADDOCK results are deleted after one week.</strong></dd>
+    <!-- end results import -->
+    <hr />
+   </div>
+   <div id="navbar">
+    <ul>
+      <li><a href="http://www.wenmr.eu">WeNMR home</a></li>
+      <li><a href="http://www.west-life.eu">West-Life home</a></li>
+      <li><a href="https://about.west-life.eu/network/west-life/services">West-Life services</a></li>
+      <li><a href="http://milou.science.uu.nl/enmr/services/HADDOCK2.2">HADDOCK2.2</a></li>
+      <li><a href="http://www.bonvinlab.org/education">HADDOCK tutorials</a></li>
+      <li><a href="http://ask.bioexcel.eu">HADDOCK Support Center</a></li>
+    </ul>
+   </div>
+   <div id="footer">
+     <p>2008-2017 &copy; <a href="http://www.bonvinlab.org">Computational Strucural Biology</a> group. All rights reserved. Original webdesign by         Marc van Dijk<br />
+      <a href="http://validator.w3.org/check/referer" title="Validate this page as XHTML 1.0 Strict." rel="external">XHTML | </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Validate the CSS used on this page." rel="exte        rnal" >CSS</a></p>
+   </div>
+  </div>
+</body>
+</html>
+

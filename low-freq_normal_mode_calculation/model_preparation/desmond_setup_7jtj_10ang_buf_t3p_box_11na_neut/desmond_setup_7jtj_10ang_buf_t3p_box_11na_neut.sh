@@ -1,0 +1,1 @@
+"${SCHRODINGER}/utilities/multisim" -JOBNAME desmond_setup_7jtj_10ang_buf_t3p_box_11na_neut -m desmond_setup_7jtj_10ang_buf_t3p_box_11na_neut.msj desmond_setup_7jtj_10ang_buf_t3p_box_11na_neut.mae -o desmond_setup_7jtj_10ang_buf_t3p_box_11na_neut-out.cms -HOST localhost -TMPLAUNCHDIR

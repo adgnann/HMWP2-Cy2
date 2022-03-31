@@ -2,49 +2,50 @@
 HMWP2-Cy2 Cyclodehydration Intermediate Docking
 ===============================================
 
-The files and directories below are listed in roughly chronological order of their use in preparing the
-cyclodehydration intermediate docking models. Each entry is formatted as:
+The files and directories below are listed in roughly chronological order of their use in preparing
+the cyclodehydration intermediate docking models. Each entry is formatted as:
 
 Directory/File: [Name]
 - Description
 
-----------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 
 Directory: prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement
-- The model refinement for the composite model of the HMWP2-Cy2 crystal structure with the reported
-  HADDOCK HMWP2-PCP2 pose, used for receptor 1 and receptor 2 (see description of other directories below)
+-	The model refinement for the composite model of the HMWP2-Cy2 crystal structure with the
+	reported HADDOCK HMWP2-PCP2 pose, used for receptor 1 and receptor 2 (see description of other
+	directories below)
 
 File: Phosphonate_Addition.cdock
-- Parameter file for covalent docking in BioLuminate
+-	Parameter file for covalent docking in BioLuminate
 
 Directory: covalent_docking_5_receptor_1_no_water_initial_cyclo_int_docking
-- Receptor 1 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
-  HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
-  and H-bond optimized, then the PCP and residues within 5 Angstrom were refined
-  using Prime (see files in the directory:
-  "prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement")
+-	Receptor 1 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
+	HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
+	and H-bond optimized, then the PCP and residues within 5 Angstrom were refined
+	using Prime (see files in the directory:
+	"prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement")
 
 Directory: covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking
-- Receptor 2 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
-  HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
-  and H-bond optimized, then the PCP and residues within 5 Angstrom were refined
-  using Prime (see files in the directory:
-  "prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement")
-  Finally, the dyad aspartate was protonated to achieve a neutral active site state.
+-	Receptor 2 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
+	HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
+	and H-bond optimized, then the PCP and residues within 5 Angstrom were refined
+	using Prime (see files in the directory:
+	"prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement")
+	Finally, the dyad aspartate was protonated to achieve a neutral active site state.
 
 Directory: covalent_docking_7_receptor_3_no_water_initial_cyclo_int_docking
-- Receptor 3 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
-  HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
-  and H-bond optimized, the dyad aspartate was protonated to achieve a neutral active
-  site state, then the PCP and residues within 5 Angstrom were refined using Prime
-  (see files in the directory:
-  "prime_mini_2_neut_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement").
+-	Receptor 3 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
+	HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
+	and H-bond optimized, the dyad aspartate was protonated to achieve a neutral active
+	site state, then the PCP and residues within 5 Angstrom were refined using Prime
+	(see files in the directory:
+	"prime_mini_2_neut_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement").
 
 Directory: covalent_docking_8_receptor_4_no_water_initial_cyclo_int_docking
-- Receptor 4 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
-  HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
-  and H-bond optimized, the dyad aspartate was protonated to achieve a neutral active
-  site state, then the PCP and residues within 5 Angstrom were refined using Prime
-  (see files in the directory:
-  "prime_mini_2_neut_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement").
-  Finally, the dyad aspartate was deprotonated to reinstall a negatively charged active site.
+-	Receptor 4 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
+	HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
+	and H-bond optimized, the dyad aspartate was protonated to achieve a neutral active
+	site state, then the PCP and residues within 5 Angstrom were refined using Prime
+	(see files in the directory:
+	"prime_mini_2_neut_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement").
+	Finally, the dyad aspartate was deprotonated to reinstall a negatively charged active site.

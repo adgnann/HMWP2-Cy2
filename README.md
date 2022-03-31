@@ -37,15 +37,18 @@ Laboratories:
 
 *Contents*:  
 -----------
-1. Structural Analysis (X-ray crystallography)
-2. Model Preparation ([BioLuminate](https://www.schrodinger.com/products/bioluminate))
+1. Structure Validation (X-ray crystallography)
+2. Model Completion ([BioLuminate](https://www.schrodinger.com/products/bioluminate)) and Sodium Site
 3. Protein-Protein Docking ([HADDOCK2.4](https://wenmr.science.uu.nl/haddock2.4/))
 4. Cyclodehydration Intermediate Docking (Glide covalent docking and Prime minimization/MM-GBSA in [BioLuminate](https://www.schrodinger.com/products/bioluminate))
-5. Normal Mode Analysis ([BioLuminate](https://www.schrodinger.com/products/bioluminate))
+5. Low-Frequency Normal Mode Calculation ([BioLuminate](https://www.schrodinger.com/products/bioluminate))
 6. Small-molecule Fragment Hot Spots ([FTMap](https://ftmap.bu.edu/login.php))
 
+Further information on files is in directories in files called "directory_contents.txt"
+BioLuminate 2020-4 was used
 
-*Structural Analysis*  
+
+*Structure Validation*  
 ---------------------
 - X-ray crystallographic data were collected at the [MIT Crystallization and X-Ray Facility](http://web.mit.edu/cld/facilities/facilities.html) on a copper (k alpha) anode source and [NECAT](https://lilith.nec.aps.anl.gov/) beamline 24-ID-E.
 - Data were processed using [HKL2000](https://hkl-xray.com/hkl-2000).
@@ -57,48 +60,37 @@ Laboratories:
 	- YbtCy2 at 2.35 Å resolution: PDB ID [7JUA](https://www.rcsb.org/structure/7JUA)
 
 - ### Structure Validation Files:
-	- 1.94 Å Structure  
-	- 2.35 Å Structure  
-  
-- ### PyMOL Session Files:
-	-
+	- 1.94 Å Structure - "D_1000251302_val-report-full-annotate_P1.pdf"
+	- 2.35 Å Structure - "D_1000251397_val-report-full-annotate_P1.pdf"
 
-*Model Preparation*  
+
+*Model Completion and Sodium Site*  
 -------------------
-
-- ### BioLuminate Protein Preparation Wizard:
-	- 
+- ### BioLuminate was used to create a complete model of HMWP2-Cy2
+- ### Maps are given to evaluate the crystallographic sodium site
 
 
 *Protein-Protein Docking*  
 -------------------------
+- ### Preparation of PCP1 NMR bundle representative (BioLuminate)
+- ### Preparation of PCP2 homology model (BioLuminate)
+- ### Input and output of docking in HADDOCK2.4
 
-- ### HADDOCK2.4 Files:
-	- Donor PCP Docking:
-	- Acceptor PCP Docking:
 
-
-*Cyclodehydration Intermediate Docking*  
+*Cyclodehydration Intermediate Docking (Glide and Prime in BioLuminate)*  
 ---------------------------------------
-
-- ### Covalent Docking Files:
-	- *file1*
-
-- ### Prime Minimization Files:
-	- *file1*
-
-- ### Prime MM-GBSA Files:
-	- *file1*
+- ### Covalent Docking Files
+- ### Prime Minimization Files
+- ### Prime MM-GBSA Files
 
 
-*Normal Mode Analysis*  
+*Low-Frequency Normal Mode Calculation*  
 ----------------------
+- ### Model preparation conducted in BioLuminate including brief molecular dynamics runs (Desmond), selection of a representative frame, and minimization
+- ### Normal mode calculation in BioLuminate
+- ### Videos of normal modes
 
-- ### Files:
-	- *file1*
 
-*Small-Molecule Fragment Hot Spots*  
+*Small-Molecule Fragment Hot Spots (FTMap)*  
 -----------------------------------
-
-- ### Files:
-	- *file1*
+- ### Results from FTMap displayed in the PyMOL session used for figure generation
