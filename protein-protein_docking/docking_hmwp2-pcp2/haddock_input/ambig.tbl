@@ -1,0 +1,199 @@
+! HADDOCK AIR restraints for 1st partner
+!
+assign ( resid 1513  and segid A)
+       (
+        ( resid 1971  and segid C)
+     or
+        ( resid 1977  and segid C)
+     or
+        ( resid 2001  and segid C)
+     or
+        ( resid 1968  and segid C)
+     or
+        ( resid 1969  and segid C)
+     or
+        ( resid 1972  and segid C)
+     or
+        ( resid 1973  and segid C)
+     or
+        ( resid 1974  and segid C)
+     or
+        ( resid 1975  and segid C)
+     or
+        ( resid 1976  and segid C)
+     or
+        ( resid 1978  and segid C)
+     or
+        ( resid 1979  and segid C)
+     or
+        ( resid 1981  and segid C)
+     or
+        ( resid 1982  and segid C)
+     or
+        ( resid 1996  and segid C)
+     or
+        ( resid 1997  and segid C)
+     or
+        ( resid 1998  and segid C)
+     or
+        ( resid 1999  and segid C)
+     or
+        ( resid 2002  and segid C)
+     or
+        ( resid 2003  and segid C)
+     or
+        ( resid 2004  and segid C)
+       )  2.0 2.0 0.0
+!
+assign ( resid 1812  and segid A)
+       (
+        ( resid 1971  and segid C)
+     or
+        ( resid 1977  and segid C)
+     or
+        ( resid 2001  and segid C)
+     or
+        ( resid 1968  and segid C)
+     or
+        ( resid 1969  and segid C)
+     or
+        ( resid 1972  and segid C)
+     or
+        ( resid 1973  and segid C)
+     or
+        ( resid 1974  and segid C)
+     or
+        ( resid 1975  and segid C)
+     or
+        ( resid 1976  and segid C)
+     or
+        ( resid 1978  and segid C)
+     or
+        ( resid 1979  and segid C)
+     or
+        ( resid 1981  and segid C)
+     or
+        ( resid 1982  and segid C)
+     or
+        ( resid 1996  and segid C)
+     or
+        ( resid 1997  and segid C)
+     or
+        ( resid 1998  and segid C)
+     or
+        ( resid 1999  and segid C)
+     or
+        ( resid 2002  and segid C)
+     or
+        ( resid 2003  and segid C)
+     or
+        ( resid 2004  and segid C)
+       )  2.0 2.0 0.0
+!
+! HADDOCK AIR restraints for 2nd partner
+!
+assign ( resid 1971  and segid C)
+       (
+        ( resid 1513  and segid A)
+     or
+        ( resid 1812  and segid A)
+     or
+        ( resid 1511  and segid A)
+     or
+        ( resid 1512  and segid A)
+     or
+        ( resid 1694  and segid A)
+     or
+        ( resid 1808  and segid A)
+     or
+        ( resid 1809  and segid A)
+     or
+        ( resid 1811  and segid A)
+     or
+        ( resid 1813  and segid A)
+     or
+        ( resid 1816  and segid A)
+     or
+        ( resid 1817  and segid A)
+     or
+        ( resid 1820  and segid A)
+     or
+        ( resid 1821  and segid A)
+     or
+        ( resid 1822  and segid A)
+     or
+        ( resid 1824  and segid A)
+     or
+        ( resid 1858  and segid A)
+       )  2.0 2.0 0.0
+!
+assign ( resid 1977  and segid C)
+       (
+        ( resid 1513  and segid A)
+     or
+        ( resid 1812  and segid A)
+     or
+        ( resid 1511  and segid A)
+     or
+        ( resid 1512  and segid A)
+     or
+        ( resid 1694  and segid A)
+     or
+        ( resid 1808  and segid A)
+     or
+        ( resid 1809  and segid A)
+     or
+        ( resid 1811  and segid A)
+     or
+        ( resid 1813  and segid A)
+     or
+        ( resid 1816  and segid A)
+     or
+        ( resid 1817  and segid A)
+     or
+        ( resid 1820  and segid A)
+     or
+        ( resid 1821  and segid A)
+     or
+        ( resid 1822  and segid A)
+     or
+        ( resid 1824  and segid A)
+     or
+        ( resid 1858  and segid A)
+       )  2.0 2.0 0.0
+!
+assign ( resid 2001  and segid C)
+       (
+        ( resid 1513  and segid A)
+     or
+        ( resid 1812  and segid A)
+     or
+        ( resid 1511  and segid A)
+     or
+        ( resid 1512  and segid A)
+     or
+        ( resid 1694  and segid A)
+     or
+        ( resid 1808  and segid A)
+     or
+        ( resid 1809  and segid A)
+     or
+        ( resid 1811  and segid A)
+     or
+        ( resid 1813  and segid A)
+     or
+        ( resid 1816  and segid A)
+     or
+        ( resid 1817  and segid A)
+     or
+        ( resid 1820  and segid A)
+     or
+        ( resid 1821  and segid A)
+     or
+        ( resid 1822  and segid A)
+     or
+        ( resid 1824  and segid A)
+     or
+        ( resid 1858  and segid A)
+       )  2.0 2.0 0.0
+

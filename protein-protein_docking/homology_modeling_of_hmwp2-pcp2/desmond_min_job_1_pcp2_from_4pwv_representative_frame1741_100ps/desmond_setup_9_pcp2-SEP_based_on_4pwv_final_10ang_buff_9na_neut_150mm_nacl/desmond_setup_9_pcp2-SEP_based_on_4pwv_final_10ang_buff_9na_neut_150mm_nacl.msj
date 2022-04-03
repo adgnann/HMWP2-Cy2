@@ -1,0 +1,33 @@
+task {
+  task = "desmond:auto"
+}
+
+build_geometry {
+  add_counterion = {
+     ion = Na
+     number = neutralize_system
+  }
+  box = {
+     shape = orthorhombic
+     size = [10.0 10.0 10.0 ]
+     size_type = buffer
+  }
+  override_forcefield = OPLS3e
+  rezero_system = false
+  salt = {
+     concentration = 0.15
+     negative_ion = Cl
+     positive_ion = Na
+  }
+  solvent = TIP3P
+}
+
+assign_forcefield {
+  forcefield = OPLS3e
+  water = TIP3P
+}
+
+# command example:
+# $SCHRODINGER/utilities/multisim -HOST <hostname> -JOBNAME desmond_setup_9_pcp2-SEP_based_on_4pwv_final_10ang_buff_9na_neut_150mm_nacl -m desmond_setup_9_pcp2-SEP_based_on_4pwv_final_10ang_buff_9na_neut_150mm_nacl.msj desmond_setup_9_pcp2-SEP_based_on_4pwv_final_10ang_buff_9na_neut_150mm_nacl.mae -o desmond_setup_9_pcp2-SEP_based_on_4pwv_final_10ang_buff_9na_neut_150mm_nacl.cms
+
+

@@ -1,0 +1,22 @@
+--------------------------------------------------------------------------------
+    Secondary Structure Prediction
+--------------------------------------------------------------------------------
+JobId          : Pauling-0-623bc126
+Name           : prime_ssp_run1_Tmp_23Mar2022_2039_43048
+Program        : Secondary Structure Prediction
+Host           : Pauling
+Dir            : /home/adgnann/Documents/simulations/pcp2_hom_mod_checking_20220323
+HostEntry      : localhost
+JobHost        : Pauling
+JobDir         : /home/adgnann/tmp/adgnann/prime_ssp_run1_Tmp_23Mar2022_2039_43048
+JobSchrodinger : /home/adgnann/schrodinger2020-4
+Commandline    : /home/adgnann/schrodinger2020-4/ssp -HOST localhost -USER adgnann prime_ssp_run1_Tmp_23Mar2022_2039_43048
+StartTime      : 2022-03-23-20:53:58
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+SSPro Prediction completed: 
+PsiPred Calculation Could not be completed: PSIPred installation not found in /home/adgnann/schrodinger2020-4/thirdparty/bin/Linux-x86_64/psipred please place it in the default location, /home/adgnann/schrodinger2020-4/thirdparty/bin/Linux-x86_64/psipred, or set the the PSP_PSIPRED_DIR environment variable to the location of your psipred installation
+Wrote secondary structure predictions to prime_ssp_run1_Tmp_23Mar2022_2039_43048.out
+Total Time Elapsed (hours:minutes:seconds)    0:00:04
+[running at reduced cpu priority]
