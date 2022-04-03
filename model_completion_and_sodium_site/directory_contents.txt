@@ -1,0 +1,44 @@
+=====================================================================
+HMWP2-PCP1 and HMWP2-PCP2 Model Completion and Sodium Site Evaluation
+=====================================================================
+
+The directories below are listed in roughly chronological order of their use in completing the Cy2
+model using coordinates from PDB IDs 7JTJ and 7JUA. Included is a .pse for evaluating maps
+supporting modeling a sodium ion in the Cy2 tunnel.
+
+Each entry is formatted as:
+
+Directory/File: [Name]
+- Description
+
+------------------------------------------------------------------------------------------------------
+
+File: metal_site_updated.pse
+-   This file contains the crystal structure, maps and measurements used to evaluate the
+    crystallographic sodium site.
+
+File: combining_saturn_and_xtal3_models_including_all_compatible_waters_20210722.pse
+-   This file contains a PyMOL session used to merge the higher-resolution Cy2 coordinates from 7JTJ
+    with the missing loop region between alpha helices 5 and 6 modeled in 7JUA.
+
+Directory: prime_mini_2_full_cy2_A_1513B_1812rot30_R1812-only
+-   This directory contains the minimization run performed on the completed Cy2 model with a modified
+    rotameric state for R1812. Note that prior to this minimization run, residues with split occupancy
+    alternative conformations were selected:
+	R1614 B
+	Q1675 A
+	S1791 A
+	Q1813 A
+	D1838 A
+	N1839 A
+    	Q1644 A
+	F1513 B
+    R1812 of this model was then modified to be in rotameric state 30 using BioLuminate and the model
+    was then hydrogen bond optimized including energy minimization of altered hydrogen coordinates.
+    All hydrogen coordinates were then refined to minimize potential energy. Water was removed prior
+    to the minimization run in this directory. Only coordinates of R1812 were free during this
+    minimization.
+
+File: full_cy2_A_1513B_1812rot30.pdb
+-   This file contains the coordinates used for the protein-protein docking runs presented in
+    the manuscript.
