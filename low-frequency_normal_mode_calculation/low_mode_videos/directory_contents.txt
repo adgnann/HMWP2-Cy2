@@ -1,0 +1,11 @@
+==========================================================
+HMWP2-PCP1 and HMWP2-PCP2 Low-Frequency Normal Mode Videos
+==========================================================
+
+HMWP2-Cy2 Low-Frequency Vibrational Normal Mode Videos (*.mp4)
+
+Videos of modes 1-4 and 6-10 visualized with 80 frames per vibrational period, rendered in MPEG-4 format.
+
+Mode 5 is omitted because it involved only side-chain motion of a single surface residue, R1817.
+
+The videos are available as a compressed tarball (*.tar.gz)
