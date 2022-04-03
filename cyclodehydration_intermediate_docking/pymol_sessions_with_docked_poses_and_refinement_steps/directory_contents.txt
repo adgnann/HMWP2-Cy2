@@ -1,0 +1,7 @@
+======================================================================================
+HMWP2-Cy2 Cyclodehydration Intermediate Docked Pose and Refinement Step PyMOL Sessions
+======================================================================================
+
+The .tar.gz archives here should be unzipped to view .pse PyMOL sessions for each pose category
+for each cyclodehydration intermediate diastereomer ("R" or "S" cyclodehydration intermediates).
+These pymol sessions are large and may be slow to load in PyMOL depending on your system.

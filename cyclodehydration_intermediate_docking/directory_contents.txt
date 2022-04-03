@@ -1,0 +1,37 @@
+===============================================
+HMWP2-Cy2 Cyclodehydration Intermediate Docking
+===============================================
+
+The files and directories below are listed in roughly chronological order of their use in preparing
+the cyclodehydration intermediate docking models. Each entry is formatted as:
+
+Directory/File: [Name]
+- Description
+
+------------------------------------------------------------------------------------------------------
+
+Directory: prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement
+-	The model refinement for the composite model of the completed HMWP2-Cy2 model with the
+	reported HADDOCK HMWP2-PCP2 pose, used for receptor 1 and receptor 2 (see description of
+	other directories below).
+
+Directory: covalent_docking_runs
+-	This directory contains subdirectories for runs of Covalent Docking v1.3 in BioLuminate.
+
+Directory: refinement_runs
+-	This directory contains .tar.gz archives containing files from refinement of R and S
+	cyclodehydration intermediate poses.
+
+Directory: pymol_sessions_with_docked_poses_and_refinement_steps
+-	This directory contains .tar.gz archives containing .pse PyMOL sessions displaying the docked
+	poses and refinement steps.
+
+Directory: mm-gbsa_runs
+-	This directory contains .tar.gz archives containing files from Prime MM-GBSA runs for the top
+	R and S cyclodehydration intermediate poses after refinement.
+
+File: covalent_docking_and_refinement_top_results_table.txt
+-	This file contains information from docking, refinement and MM-GBSA analysis of the top
+	R and S cyclodehydration intermediate poses reported in the paper. The numbers in the
+	leftmost column correspond to numbers in tables reported under the SI figures reporting
+	refined docking results.

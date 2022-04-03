@@ -1,0 +1,14 @@
+STRUCT_FILE	prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement.mae
+JOB_TYPE	REFINE
+PRIME_TYPE	REAL_MIN
+SELECT	asl = fillres within 5 ((chain.name C) )
+MINIM_NITER	2
+MINIM_NSTEP	65
+MINIM_RMSG	0.010000
+MINIM_METHOD	au
+USE_CRYSTAL_SYMMETRY	no
+USE_RANDOM_SEED	no
+SEED	0
+OPLS_VERSION OPLS3e
+EXT_DIEL	80.00
+USE_MEMBRANE	no

@@ -1,0 +1,118 @@
+--------------------------------------------------------------------------------
+    
+    Covalent Docking v1.3
+
+--------------------------------------------------------------------------------
+JobId          : Pauling-1-61252704
+Name           : covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00001
+Program        : 
+Host           : Pauling
+Dir            : /home/adgnann/tmp/adgnann/covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking
+HostEntry      : localhost
+JobHost        : Pauling
+JobDir         : /home/adgnann/tmp/adgnann/covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00001
+JobSchrodinger : /home/adgnann/schrodinger2020-4
+Commandline    : /home/adgnann/schrodinger2020-4/run /home/adgnann/schrodinger2020-4/psp-v6.2/bin/Linux-x86_64/covalent_docking_startup.py covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00001.pickled_namespace -HOST localhost
+StartTime      : 2021-08-24-13:06:13
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Setting up covalent reaction: receptor_2_no_water - ppant-2hptt-o--r (Custom)
+  Connecting receptor_2_no_water,"C:1977: OG " - ppant-2hptt-o--r,"Z:999: P24"
+
+
+
+Setting up covalent reaction: receptor_2_no_water - ppant-2hptt-oh-r (Custom)
+  Connecting receptor_2_no_water,"C:1977: OG " - ppant-2hptt-oh-r,"Z:999: P24"
+
+
+
+
+
+
+
+All Entries Succesfully Processed
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+    
+    Covalent Docking v1.3
+
+--------------------------------------------------------------------------------
+JobId          : Pauling-0-6125272a
+Name           : covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00002
+Program        : 
+Host           : Pauling
+Dir            : /home/adgnann/tmp/adgnann/covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking
+HostEntry      : localhost
+JobHost        : Pauling
+JobDir         : /home/adgnann/tmp/adgnann/covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00002
+JobSchrodinger : /home/adgnann/schrodinger2020-4
+Commandline    : /home/adgnann/schrodinger2020-4/run /home/adgnann/schrodinger2020-4/psp-v6.2/bin/Linux-x86_64/covalent_docking_startup.py covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00002.pickled_namespace -HOST localhost
+StartTime      : 2021-08-24-13:06:50
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Setting up covalent reaction: receptor_2_no_water - ppant-2hptt-o--s (Custom)
+  Connecting receptor_2_no_water,"C:1977: OG " - ppant-2hptt-o--s,"Z:999: P24"
+
+All Entries Succesfully Processed
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+    
+    Covalent Docking v1.3
+
+--------------------------------------------------------------------------------
+JobId          : Pauling-0-61252752
+Name           : covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00003
+Program        : 
+Host           : Pauling
+Dir            : /home/adgnann/tmp/adgnann/covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking
+HostEntry      : localhost
+JobHost        : Pauling
+JobDir         : /home/adgnann/tmp/adgnann/covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00003
+JobSchrodinger : /home/adgnann/schrodinger2020-4
+Commandline    : /home/adgnann/schrodinger2020-4/run /home/adgnann/schrodinger2020-4/psp-v6.2/bin/Linux-x86_64/covalent_docking_startup.py covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking.00003.pickled_namespace -HOST localhost
+StartTime      : 2021-08-24-13:07:31
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Setting up covalent reaction: receptor_2_no_water - ppant-2hptt-oh-s (Custom)
+  Connecting receptor_2_no_water,"C:1977: OG " - ppant-2hptt-oh-s,"Z:999: P24"
+
+All Entries Succesfully Processed
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+Covalent Docking Results
+
+-------------------------------
+R Cyclodehydration Intermediate
+-------------------------------
+
+Hydroxyl Toward Helix 4
+
+			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
+			Docking		Energy		dG Bind		Complex Energy		Receptor Energy		Receptor Strain Energy		Ligand Energy		Ligand Strain Energy
+#	Name		Score		kcal/mol	kcal/mol	kcal/mol		kcal/mol		kcal/mol			kcal/mol		kcal/mol
+1	covdoc6_14	-10.438		-20936.0	-82.24		-21082.948976		-20904.339556		6.082712			-96.370656		8.338709
+2	covdoc6_24	-9.984		-20934.7	-80.44		-21080.204212		-20903.383556		5.107326			-96.376241		9.132471
+3	covdoc6_20	-9.213		-20930.6	-64.46		-21069.093632		-20913.019937		10.425839			-91.616868		9.846288
+
+Hydroxyl Toward N-terminal Beta Sheet
+
+			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
+			Docking		Energy		dG Bind		Complex Energy		Receptor Energy		Receptor Strain Energy		Ligand Energy		Ligand Strain Energy
+#	Name		Score		kcal/mol	kcal/mol	kcal/mol		kcal/mol		kcal/mol			kcal/mol		kcal/mol
+4	covdoc6_16	-9.930		-20954.5	-72.68		-21098.322875		-20922.579988		6.700579			-103.060853		8.264454
+5	covdoc6_17	-10.387		-20951.4	-73.80		-21094.369088		-20918.714474		3.823872			-101.850088		6.453110
+6	covdoc6_19	-9.476		-20947.1	-75.82		-21095.817114		-20920.119016		6.674846			-99.879090		13.220337
+
+Hydroxyl Toward Dyad
+
+			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
+			Docking		Energy		dG Bind		Complex Energy		Receptor Energy		Receptor Strain Energy		Ligand Energy		Ligand Strain Energy
+#	Name		Score		kcal/mol	kcal/mol	kcal/mol		kcal/mol		kcal/mol			kcal/mol		kcal/mol
+7	covdoc6_1	-9.319		-20960.2	-71.98		-21103.873581		-20926.734575		8.059538			-105.160238		18.830907
+8	covdoc6_11	-9.360		-20953.6	-72.50		-21096.106392		-20923.206450		8.755209			-100.397134		14.005276
+9	covdoc6_3	-8.664		-20945.5	-76.80		-21086.559562		-20913.535420		2.471956			-96.223591		17.246979
+
+
+
+-------------------------------
+S Cyclodehydration Intermediate
+-------------------------------
+
+Hydroxyl Toward Helix 4
+
+			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
+			Docking		Energy		dG Bind		Complex Energy		Receptor Energy		Receptor Strain Energy		Ligand Energy		Ligand Strain Energy
+#	Name		Score		kcal/mol	kcal/mol	kcal/mol		kcal/mol		kcal/mol			kcal/mol		kcal/mol
+10	covdoc6_30	-8.350		-20949.1	-62.55		-21090.068		-20918.419		3.542				-109.100		18.579
+11	covdoc6_5	-11.229		-20946.4	-75.27		-21083.800		-20913.093		7.142				-95.442			10.666
+12	covdoc6_25	-10.839		-20942.8	-63.36		-21085.078		-20916.054		5.941				-105.660		17.533
+
+Hydroxyl Toward N-terminal Beta Sheet
+
+			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
+			Docking		Energy		dG Bind		Complex Energy		Receptor Energy		Receptor Strain Energy		Ligand Energy		Ligand Strain Energy
+#	Name		Score		kcal/mol	kcal/mol	kcal/mol		kcal/mol		kcal/mol			kcal/mol		kcal/mol
+13	covdoc6_27	-10.167		-20931.7	-76.04		-21072.500		-20899.997		10.715				-96.464			11.786
+14	covdoc6_29	-10.570		-20924.5	-59.91		-21072.138		-20914.365		11.433				-101.009		19.657
+15	covdoc5_29	-8.918		-20917.4	-68.12		-21065.575		-20896.292		11.725				-83.749			25.737
+16	covdoc5_28*	-8.818		-20924.9	-72.65		-21062.850		-20887.150		5.011				-92.202			11.582
+
+Hydroxyl Toward Dyad
+
+			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
+			Docking		Energy		dG Bind		Complex Energy		Receptor Energy		Receptor Strain Energy		Ligand Energy		Ligand Strain Energy
+	Name		Score		kcal/mol	kcal/mol	kcal/mol		kcal/mol		kcal/mol			kcal/mol		kcal/mol
+17	covdoc5_26	-8.503		-20935.3	-78.87		-21072.607		-20895.594		5.398				-98.144			18.174
+18	covdoc5_27	-10.010		-20906.1	-55.39		-21045.450		-20895.110		8.178				-94.952			9.158

@@ -1,0 +1,30 @@
+====================================================
+HMWP2-Cy2 Cyclodehydration Intermediate Docking Runs
+====================================================
+
+Directory/File: [Name]
+- Description
+
+------------------------------------------------------------------------------------------------------
+
+File: Phosphonate_Addition.cdock
+-	Parameter file for covalent docking in BioLuminate.
+
+Directory: covalent_docking_5_receptor_1_no_water_initial_cyclo_int_docking
+-	Receptor 1 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
+	HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
+	and H-bond optimized, then the PCP and residues within 5 Angstrom were refined
+	using Prime (see files in the directory:
+	"prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement")
+	Models in this run with names containing "o--r" or "o--s" were not used further because of
+	unphysical distortions of the oxyanion form of the thiazolidine upon refinement.
+
+Directory: covalent_docking_6_receptor_2_no_water_initial_cyclo_int_docking
+-	Receptor 2 is the HMWP2-Cy2 crystal structure with the reported HADDOCK
+	HMWP2-PCP2 pose included by Cy domain alignment. This model was preprocessed
+	and H-bond optimized, then the PCP and residues within 5 Angstrom were refined
+	using Prime (see files in the directory:
+	"prime_mini_1_neg_dyad_xtal-comp70pcp2_complex_initial_chainC_and_within_5ang_refinement")
+	Finally, the dyad aspartate was protonated to achieve a neutral active site state.
+	Models in this run with names containing "o--r" or "o--s" were not used further because of
+	unphysical distortions of the oxyanion form of the thiazolidine upon refinement

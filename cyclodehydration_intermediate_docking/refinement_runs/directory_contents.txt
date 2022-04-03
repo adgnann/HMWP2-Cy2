@@ -1,0 +1,36 @@
+=======================================================
+HMWP2-Cy2 Cyclodehydration Intermediate Refinement Runs
+=======================================================
+
+Directory/File: [Name]
+- Description
+
+------------------------------------------------------------------------------------------------------
+
+File: r_cyclodehydration_intermediate_prime_mini_jobs.tar.gz
+-   This archive contains Prime minimization files for the following refinement steps applied to the
+    R cyclodehydration intermediate docking poses:
+       1) Initial refinement of protein residues within 5 Angstrom of the ligand poses
+       2) Subsequent refinement of ligand and residues with 5 Angstrom of it
+       3) Refinement of the ligand and residues within 5 Angstrom after sidechain optimization
+          (see the next description)
+
+File: r_cyclodehydration_intermediate_prime_sidechain_jobs.tar.gz
+-   This archive contains Prime sidechain optimization files for Monte Carlo conformational
+    searches of residues surrounding the R cyclodehydration intermediate docking poses after
+    refinement through step 2 of the above description. The top 5 steps as determined by energy
+    were returned.
+
+File: s_cyclodehydration_intermediate_prime_mini_jobs.tar.gz
+-   This archive contains Prime minimization files for the following refinement steps applied to the
+    S cyclodehydration intermediate docking poses:
+       1) Initial refinement of protein residues within 5 Angstrom of the ligand poses
+       2) Subsequent refinement of ligand and residues with 5 Angstrom of it
+       3) Refinement of the ligand and residues within 5 Angstrom after sidechain optimization
+          (see the next description)
+
+File: s_cyclodehydration_intermediate_prime_sidechain_jobs.tar.gz
+-   This archive contains Prime sidechain optimization files for Monte Carlo conformational
+    searches of residues surrounding the S cyclodehydration intermediate docking poses after
+    refinement through step 2 of the above description. The top 5 steps as determined by energy
+    were returned.
