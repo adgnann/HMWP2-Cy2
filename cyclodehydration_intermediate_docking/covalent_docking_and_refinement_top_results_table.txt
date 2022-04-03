@@ -56,6 +56,8 @@ Hydroxyl Toward N-terminal Beta Sheet
 15	covdoc5_29	-8.918		-20917.4	-68.12		-21065.575		-20896.292		11.725				-83.749			25.737
 16	covdoc5_28*	-8.818		-20924.9	-72.65		-21062.850		-20887.150		5.011				-92.202			11.582
 
+* Outlier in hydroxyl-toward-N terminal beta sheet class with 2HPT deep into the side chain binding region.
+
 Hydroxyl Toward Dyad
 
 			Glide		Prime		Prime MM-GBSA ------------------------------------------------------------------------------------------------------------------------------
