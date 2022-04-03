@@ -1,0 +1,145 @@
+Calculating Block Averages 
+                    Version: 1.0 
+                Energy_File: /media/adgnann/860EVO_int/cy_low_modes_20211022/desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K/desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K.ene 
+                   Log_File: /media/adgnann/860EVO_int/cy_low_modes_20211022/desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K/desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K.log 
+Block: Job_Details
+ Job_name = /media/adgnann/860EVO_int/cy_low_modes_20211022/desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K/desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K 
+ Status = Normal 
+ Duration = 0.0996 
+ Temperature = 277.0 
+ Particles = 0 
+ Ensemble = NPT 
+ Atoms = 48621 
+ Degrees_of_freedom = 100731 
+End_Block 
+
+Block: time
+Time(ps) time(ps)
+  5.400     5.400 
+ 16.200    16.200 
+ 26.400    26.400 
+ 36.600    36.600 
+ 46.200    46.200 
+ 56.400    56.400 
+ 66.600    66.600 
+ 76.200    76.200 
+ 86.400    86.400 
+End_Block 
+
+Block: E
+Time(ps) E(kcal/mol)
+  5.400   -135271.806 
+ 16.200   -135392.345 
+ 26.400   -135278.896 
+ 36.600   -135250.196 
+ 46.200   -135068.921 
+ 56.400   -135221.709 
+ 66.600   -135135.669 
+ 76.200   -135130.114 
+ 86.400   -135029.035 
+End_Block 
+
+Block: E_p
+Time(ps) E_p(kcal/mol)
+  5.400   -162989.158 
+ 16.200   -163047.751 
+ 26.400   -162988.934 
+ 36.600   -162952.612 
+ 46.200   -162806.584 
+ 56.400   -162937.837 
+ 66.600   -162919.314 
+ 76.200   -162862.974 
+ 86.400   -162733.315 
+End_Block 
+
+Block: E_k
+Time(ps) E_k(kcal/mol)
+  5.400   27717.352 
+ 16.200   27655.406 
+ 26.400   27710.038 
+ 36.600   27702.416 
+ 46.200   27737.663 
+ 56.400   27716.128 
+ 66.600   27783.645 
+ 76.200   27732.860 
+ 86.400   27704.280 
+End_Block 
+
+Block: E_c
+Time(ps) E_c(kcal/mol)
+  5.400     1.236 
+ 16.200     0.999 
+ 26.400     0.810 
+ 36.600     0.690 
+ 46.200     0.626 
+ 56.400     0.587 
+ 66.600     0.863 
+ 76.200     0.823 
+ 86.400     1.022 
+End_Block 
+
+Block: E_x
+Time(ps) E_x(kcal/mol)
+  5.400   -289.883 
+ 16.200   -155.266 
+ 26.400   -263.098 
+ 36.600   -281.724 
+ 46.200   -452.943 
+ 56.400   -293.401 
+ 66.600   -372.449 
+ 76.200   -376.060 
+ 86.400   -474.017 
+End_Block 
+
+Block: E_f
+Time(ps) E_f(kcal/mol)
+  5.400   -646.900 
+ 16.200   -646.441 
+ 26.400   -645.174 
+ 36.600   -645.845 
+ 46.200   -644.388 
+ 56.400   -645.565 
+ 66.600   -647.122 
+ 76.200   -645.071 
+ 86.400   -644.378 
+End_Block 
+
+Block: P
+Time(ps) P(bar)
+  5.400   109.624 
+ 16.200    -1.399 
+ 26.400   -112.284 
+ 36.600    55.286 
+ 46.200   -33.777 
+ 56.400    -2.252 
+ 66.600    47.379 
+ 76.200   -41.604 
+ 86.400   -69.175 
+End_Block 
+
+Block: V
+Time(ps) V(A^3)
+  5.400   479940.750 
+ 16.200   480164.966 
+ 26.400   480743.470 
+ 36.600   479935.544 
+ 46.200   480166.632 
+ 56.400   480420.665 
+ 66.600   480735.114 
+ 76.200   480757.576 
+ 86.400   481213.748 
+End_Block 
+
+Block: T
+Time(ps) T(K)
+  5.400   276.934 
+ 16.200   276.315 
+ 26.400   276.861 
+ 36.600   276.785 
+ 46.200   277.137 
+ 56.400   276.922 
+ 66.600   277.596 
+ 76.200   277.089 
+ 86.400   276.803 
+End_Block 
+

@@ -1,0 +1,200 @@
+Molecular Dynamics
+Job launching command:
+$SCHRODINGER/utilities/multisim -JOBNAME desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy -HOST gibbs-gtx980 -maxjob 1 -cpu 1 -m desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy.msj -c desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy.cfg -description "Molecular Dynamics" desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy.cms -mode umbrella -set stage[1].set_family.md.jlaunch_opt=[-gpu] -o desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy-out.cms -ATTACHED
+
+Multisim runs in the umbrella mode.
+Booting the multisim workflow engine...
+           multisim version: 3.8.5.19
+            mmshare version: 4.4
+                    Jobname: desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy
+                   Username: andrew.gnann001
+            Master job host: gibbs28
+                Subjob host: gibbs28.gibbs.local
+                     Job ID: gibbs28-0-617a51ce
+            multisim script: desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy.msj
+       Structure input file: desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy.cms
+            CPUs per subjob: "1"
+             Job start time: Thu Oct 28 03:31:30 2021
+           Launch directory: /hpcstor1/scratch01/a/andrew.gnann001/short_cy_runs_for_low_mode_solvation/desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy
+               $SCHRODINGER: /shared/software/schrodinger2018-4
+
+Parsing the multisim script file and the '-set' option...
+
+Summary of user stages:
+  stage 1 - task
+  stage 2 - simulate, Brownian Dynamics NVT, T = 10 K, small timesteps, and restraints on solute heavy atoms, 100ps
+  stage 3 - simulate, NVT, T = 10 K, small timesteps, and restraints on solute heavy atoms, 12ps
+  stage 4 - simulate, NPT, T = 10 K, and restraints on solute heavy atoms, 12ps
+  stage 5 - simulate, NPT and restraints on solute heavy atoms, 12ps
+  stage 6 - simulate, NPT and no restraints, 24ps
+  stage 7 - simulate
+(7 stages in total)
+
+Workflow is started now.
+
+Stage 1 - task
+stage[1] task: Detecting system type...
+stage[1] task:   It seems a mature model system created for regular molecular dynamics simulations
+stage[1] task: Recognizing traits of system...
+stage[1] task:   (none)
+
+Stage 1 completed successfully.
+Stage 1 duration: 0h 0' 7"
+
+
+Stage 2 - simulate
+
+Launched Job("gibbs28-0-617a51eb"):
+  Launch time: 2021-10-28-03:31:55
+  Host       : gibbs28.gibbs.local
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_2
+  Stage      : 2 (simulate)
+
+Job("gibbs28-0-617a51eb") was successfully finished.
+  Host       : gibbs28.gibbs.local
+  Launch time: Thu Oct 28 03:31:55 2021
+  Start time : Thu Oct 28 03:31:56 2021
+  End time   : Thu Oct 28 03:34:47 2021
+  Duration   : 0h 2' 51"
+  CPUs       : 1
+  CPU time   : 0h 2' 51"
+  Exit code  : 0
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_2
+  Stage      : 2 (simulate)
+
+Stage 2 completed successfully.
+Stage 2 duration: 0h 3' 21"
+
+
+Stage 3 - simulate
+
+Launched Job("gibbs28-0-617a52b5"):
+  Launch time: 2021-10-28-03:35:17
+  Host       : gibbs28.gibbs.local
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_3
+  Stage      : 3 (simulate)
+
+Job("gibbs28-0-617a52b5") was successfully finished.
+  Host       : gibbs28.gibbs.local
+  Launch time: Thu Oct 28 03:35:17 2021
+  Start time : Thu Oct 28 03:35:18 2021
+  End time   : Thu Oct 28 03:36:22 2021
+  Duration   : 0h 1' 4"
+  CPUs       : 1
+  CPU time   : 0h 1' 4"
+  Exit code  : 0
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_3
+  Stage      : 3 (simulate)
+
+Stage 3 completed successfully.
+Stage 3 duration: 0h 1' 33"
+
+
+Stage 4 - simulate
+
+Launched Job("gibbs28-0-617a530e"):
+  Launch time: 2021-10-28-03:36:46
+  Host       : gibbs28.gibbs.local
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_4
+  Stage      : 4 (simulate)
+
+Job("gibbs28-0-617a530e") was successfully finished.
+  Host       : gibbs28.gibbs.local
+  Launch time: Thu Oct 28 03:36:46 2021
+  Start time : Thu Oct 28 03:36:47 2021
+  End time   : Thu Oct 28 03:37:48 2021
+  Duration   : 0h 1' 1"
+  CPUs       : 1
+  CPU time   : 0h 1' 1"
+  Exit code  : 0
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_4
+  Stage      : 4 (simulate)
+
+Stage 4 completed successfully.
+Stage 4 duration: 0h 1' 26"
+
+
+Stage 5 - simulate
+
+Launched Job("gibbs28-0-617a5365"):
+  Launch time: 2021-10-28-03:38:13
+  Host       : gibbs28.gibbs.local
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_5
+  Stage      : 5 (simulate)
+
+Job("gibbs28-0-617a5365") was successfully finished.
+  Host       : gibbs28.gibbs.local
+  Launch time: Thu Oct 28 03:38:13 2021
+  Start time : Thu Oct 28 03:38:14 2021
+  End time   : Thu Oct 28 03:39:14 2021
+  Duration   : 0h 1' 0"
+  CPUs       : 1
+  CPU time   : 0h 1' 0"
+  Exit code  : 0
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_5
+  Stage      : 5 (simulate)
+
+Stage 5 completed successfully.
+Stage 5 duration: 0h 1' 26"
+
+
+Stage 6 - simulate
+
+Launched Job("gibbs28-0-617a53bd"):
+  Launch time: 2021-10-28-03:39:41
+  Host       : gibbs28.gibbs.local
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_6
+  Stage      : 6 (simulate)
+
+Job("gibbs28-0-617a53bd") was successfully finished.
+  Host       : gibbs28.gibbs.local
+  Launch time: Thu Oct 28 03:39:41 2021
+  Start time : Thu Oct 28 03:39:42 2021
+  End time   : Thu Oct 28 03:40:53 2021
+  Duration   : 0h 1' 11"
+  CPUs       : 1
+  CPU time   : 0h 1' 11"
+  Exit code  : 0
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_6
+  Stage      : 6 (simulate)
+
+Stage 6 completed successfully.
+Stage 6 duration: 0h 1' 39"
+
+
+Stage 7 - simulate
+
+Launched Job("gibbs28-0-617a541e"):
+  Launch time: 2021-10-28-03:41:18
+  Host       : gibbs28.gibbs.local
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy
+  Stage      : 7 (simulate)
+
+Job("gibbs28-0-617a541e") was successfully finished.
+  Host       : gibbs28.gibbs.local
+  Launch time: Thu Oct 28 03:41:18 2021
+  Start time : Thu Oct 28 03:41:19 2021
+  End time   : Thu Oct 28 03:42:11 2021
+  Duration   : 0h 0' 52"
+  CPUs       : 1
+  CPU time   : 0h 0' 52"
+  Exit code  : 0
+  Jobname    : desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy
+  Stage      : 7 (simulate)
+
+Stage 7 completed successfully.
+Stage 7 duration: 0h 1' 7"
+
+Cleaning up files...
+
+Multisim summary (Thu Oct 28 03:42:13 2021):
+  Stage 1 completed.
+  Stage 2 completed.
+  Stage 3 completed.
+  Stage 4 completed.
+  Stage 5 completed.
+  Stage 6 completed.
+  Stage 7 completed.
+  Total duration: 0h 10' 42"
+  Total GPU time: 0h 7' 59" (used by 6 subjob(s))
+Multisim completed.

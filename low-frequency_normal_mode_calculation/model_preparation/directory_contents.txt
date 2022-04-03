@@ -1,0 +1,152 @@
+==================================================================================
+HMWP2-Cy2 Model Preparation for Low-Frequency Vibrational Normal Mode Calculations
+==================================================================================
+
+The files and directories below are listed in roughly chronological order of their use in preparing
+the HMWP2-Cy2 model for low-frequency vibrational normal mode calculations.
+
+Each entry is formatted as:
+
+Directory/File: [Name]
+- Description
+
+------------------------------------------------------------------------------------------------------
+
+File: hmwp2-cy2_pdb_7jtj_model_preprocessing_hbond-opt_and_minimization_before_md.maegz
+-	This file contains (in order):
+	* The initial PDB 7JTJ pulled from the RCSB PDB
+	* The output from preprocessing in the BioLuminate Protein Preparation Wizard (*_preprocessed),
+	  which includes hydrogen atoms, charge assignment, correct bond orders, and the missing loop
+	  region between alpha helices 5 and 6 as well as the missing side chains modeled using Prime
+	  in BioLuminate.
+	* Output from hydrogen-bond optimization in the Protein Preparation Wizard (*_hbond-opt)
+	* Output from potential energy minimization of hydrogen coordinates in Impact in the Protein
+	  Preparation Wizard (*_H-minimized)
+	* Output from the potential energy minimziation of all atomic coordinates in Impact in the
+	  Protein Preparation Wizard, with the minimization truncated in the step before heavy atom
+	  RMSDs reached 0.3 Angstrom (*_H-minimized_-_minimized)
+	* A model with the polyethylene glycol (PEG) fragment removed (*_no_peg)
+	* A model with distant surface water molecules removed (*_distant_surface_water_removed). This
+	  file was used to build the model system for MD simulation.
+
+Directory: desmond_setup_7jtj_10ang_buf_t3p_box_11na_neut/
+-	This directory contains files for setup of the initial model system for MD simulation. This
+	system was not used in its current state because it still contains the crystallographic
+	sodium, which was removed to aid direct comparison between HMWP2-Cy2 results and results
+	obtained for other Cy domains that do not contain the sodium.
+
+Directory: desmond_rebuildsystem_7jtj_no_active_site_water_charge_balanced_with_sodium_in_bulk/
+-	This directory contains files for "rebuilding" the model system for MD after removal of the
+	crystallographic sodium and replacement of a bulk water molecule with a sodium ion to balance
+	charge. It also contains the Desmond Solvate Pocket tool input file (*.spd) and the log from
+	that run (adding_water_input3.log), which filled water in the alternate upstream tunnel
+	entrance and the active site, which had voids following removal of the PEG fragment and the
+	crystallographic sodium ion. The output from the Solvate Pocket run is the file ending in
+	"-out.cms".
+
+Directory: desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy
+-	This directory contains each stage of the default NPT ensemble relaxation protocol employed
+	by Desmond MD in BioLuminate. The set of MD stages in this directory was conducted on NVidia
+	GTX980 graphics cards on the Gibbs GPU cluster at the University of Massachusetts Boston.
+	Special thanks to Jeff Dusenberry and Runcong Chen of the IT Research Computing staff for
+	administering the system and helping get our programs running.
+	* Note: the last stage with solute restraints is stage 5, and the run files and output
+	  for this stage are in the subdirectory:
+	  "desmond_md_job_7jtj_no_active_site_na_relaxation_0ns_50kcalmola2_on_protein_heavy_5"
+	  Output from this stage was used in the subsequent stages which gradually release
+	  restraints and heat the system.
+
+Directory: desmond_md_job_7jtj_stage5_continue_10kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K
+-	This directory contains the MD run continuing 100 ps from the end of the Desmond relaxtion
+	protocol's fifth stage. It employs 10 kcal/molA^2 restraints on protein heavy atoms and is
+	conducted at a temperature of 277 K (Nose-Hoover chain thermostatting with 1 ps relaxation)
+	and a pressure of 1.01325 bar (Martyna-Tobias-Klein with 2 ps relaxation and isotropic
+	coupling) in the NPT ensemble. This and subsequent runs were conducted on an NVidia GeForce
+	RTX 2060 graphics card.
+
+Directory: desmond_md_job_7jtj_stage5_continue_5kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K
+-	This directory contains the MD run continuing 100 ps from the end of the 10 kcal/molA^2 run in
+	the previous directory. It employs 5 kcal/molA^2 restraints on protein heavy atoms and is
+	conducted at a temperature of 277 K (Nose-Hoover chain thermostatting with 1 ps relaxation)
+	and a pressure of 1.01325 bar (Martyna-Tobias-Klein with 2 ps relaxation and isotropic
+	coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_1kcalmola2_on_protein_heavy_100ps_1ps_rec_short_timestep_277K
+-	This directory contains the MD run continuing 100 ps from the end of the 5 kcal/molA^2 run in
+	the previous directory. It employs 1 kcal/molA^2 restraints on protein heavy atoms and is
+	conducted at a temperature of 277 K (Nose-Hoover chain thermostatting with 1 ps relaxation)
+	and a pressure of 1.01325 bar (Martyna-Tobias-Klein with 2 ps relaxation and isotropic
+	coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_100ps_1ps_rec_short_timestep_280K
+-	This directory contains the MD run continuing 100 ps from the end of the 1 kcal/molA^2 run in
+	the previous directory. No restraints are employed, and it is conducted at a temperature of
+	280 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325 bar
+	(Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_100ps_1ps_rec_short_timestep_285K
+-	This directory contains the MD run continuing 100 ps from the end of the 280 K run in the
+	previous directory. No restraints are employed, and it is conducted at a temperature of
+	285 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325 bar
+	(Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_100ps_1ps_rec_short_timestep_290K
+-	This directory contains the MD run continuing 100 ps from the end of the 285 K run in the
+	previous directory. No restraints are employed, and it is conducted at a temperature of
+	290 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325 bar
+	(Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_100ps_1ps_rec_short_timestep_295K
+-	This directory contains the MD run continuing 100 ps from the end of the 290 K run in the
+	previous directory. No restraints are employed, and it is conducted at a temperature of
+	295 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325 bar
+	(Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_100ps_1ps_rec_short_timestep_300K
+-	This directory contains the MD run continuing 100 ps from the end of the 295 K run in the
+	previous directory. No restraints are employed, and it is conducted at a temperature of
+	300 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325 bar
+	(Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_stage5_continue_500ps_1ps_rec_short_timestep_300K
+-	This directory contains the MD run continuing 500 ps from the end of the 100 ps, 300 K run
+	in the previous directory. No restraints are employed, and it is conducted at a temperature
+	of 300 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325
+	bar (Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_post-warming_3ns_1ps_rec_300K
+-	This directory contains the MD run continuing 3 ns from the end of the 500 ps, 300 K run
+	in the previous directory. No restraints are employed, and it is conducted at a temperature
+	of 300 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325
+	bar (Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+
+Directory: desmond_md_job_7jtj_continue1_2ns_1ps_rec_300K
+-	This directory contains the MD run continuing 2 ns from the end of the 3 ns, 300 K run
+	in the previous directory. No restraints are employed, and it is conducted at a temperature
+	of 300 K (Nose-Hoover chain thermostatting with 1 ps relaxation) and a pressure of 1.01325
+	bar (Martyna-Tobias-Klein with 2 ps relaxation and isotropic coupling) in the NPT ensemble.
+	The directory also contains files for merging the 3 ns and 2 ns trajectories into a 5 ns
+	trajectory (desmond_md_job_7jtj_continue1_2ns_1ps_rec_300K_noframezero-out.cms and its
+	associated *_trj directory) from which the final 2,200 frames were sampled to find a
+	representative state to extract and minimize for the normal mode calculation.
+
+Directory: desmond_md_job_7jtj_post-warming_5ns_merge
+-	This directory contains the merged 3 ns + 2 ns post-warming MD run described at the end of
+	the description for the previous directory.
+
+File: representative_frame_from_end_of_5ns_7jtj_md_simulation.maegz
+-	The representative frame 4,334 from the 5 ns MD equilibration following
+	warming.
+
+File: representative_frame_from_end_of_5ns_7jtj_md_simulation_negative_eigenvalue_water_removed.maegz
+-	The representative frame 4,334 from the 5 ns MD equilibration following
+	warming, but with water molecules found to contribute normal modes with negative eigenvalues
+	removed from the model.
+
+Directory: mmod_mini_7jtj_warmed_5ns_merge_repframe4334_negeigwatremoved_prcg_to_grad_0p0418kjmol
+-	This directory contains the run files and output for the MacroModel potential energy
+	minimization of the representative frame 4,334 from the 5 ns MD equilibration following
+	warming, with water molecules contributing normal modes with negative eigenvalues removed.
+	The minimization converged under the criterion of 0.0418 kJ/mol in iteration 2,750. The
+	OPLS3e force field was used for this minimization. The all-atom RMSD to the MD input model
+	is 1.9123 Angstrom, and the C-alpha RMSD to the MD input model is 1.4148 Angstrom.

@@ -1,0 +1,29 @@
+name = adding_water
+
+output_structure = final
+
+temperature = 300
+chemical_potential = -6.18
+cut_off = 9.0
+
+init_num_passes = 100000
+num_passes = 500000
+update_frequency = 10
+pass_term_window = 100000
+term_std_slope = 0.00001
+
+num_trans_rot = 15
+num_delete = 7
+num_insert = 7
+
+max_disp = 0.105
+max_dpsi = 0.318
+max_dctheta = 0.0654
+short_dist = 1.0
+
+sample_xmin = -20
+sample_xmax = 6
+sample_ymin = -12
+sample_ymax = 2
+sample_zmin = -7
+sample_zmax = 5
