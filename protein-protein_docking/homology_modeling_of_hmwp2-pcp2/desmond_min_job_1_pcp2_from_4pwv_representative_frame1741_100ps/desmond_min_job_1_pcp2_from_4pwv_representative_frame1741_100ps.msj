@@ -1,4 +1,0 @@
-task { task = "desmond:auto" }
-simulate { cfg_file = "desmond_min_job_1_pcp2_from_4pwv_representative_frame1741_100ps.cfg" jobname = "$MASTERJOBNAME" dir = "." compress = "" }
-# Job launching command:
-# $SCHRODINGER/utilities/multisim -VIEWNAME desmond_minimization_gui.MiniApp -JOBNAME desmond_min_job_1_pcp2_from_4pwv_representative_frame1741_100ps -HOST localhost -maxjob 1 -cpu 1 -m desmond_min_job_1_pcp2_from_4pwv_representative_frame1741_100ps.msj -c desmond_min_job_1_pcp2_from_4pwv_representative_frame1741_100ps.cfg -description Minimization desmond_min_job_1_pcp2_from_4pwv_representative_frame1741_100ps.cms -mode umbrella -PROJ /media/adgnann/870_EVO_1TB/dissertation/appendix/homology_modeling_files/hmwp2-pcp2/hmwp2-pcp2_homology_modeling_20210714.prj -DISP append -o desmond_min_job_1_pcp2_from_4pwv_representative_frame1741_100ps-out.cms -lic DESMOND_GPGPU:16

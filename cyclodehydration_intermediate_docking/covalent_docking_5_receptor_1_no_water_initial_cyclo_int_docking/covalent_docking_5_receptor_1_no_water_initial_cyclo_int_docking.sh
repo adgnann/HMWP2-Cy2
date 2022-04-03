@@ -1,1 +1,0 @@
-"${SCHRODINGER}/covalent_docking" covalent_docking_5_receptor_1_no_water_initial_cyclo_int_docking.inp -OVERWRITE -HOST localhost:3 -NJOBS 3 -TMPLAUNCHDIR

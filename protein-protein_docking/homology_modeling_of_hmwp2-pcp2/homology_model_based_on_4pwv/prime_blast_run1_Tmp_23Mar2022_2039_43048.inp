@@ -1,5 +1,0 @@
-PROGNAME	blastp
-DATABASE	pdb
-QUERY_FILE	prime_blast_run1_Tmp_23Mar2022_2039_43048.seq
-FILTER	false
-EXPAND_HITS	true
