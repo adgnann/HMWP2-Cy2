@@ -13,7 +13,7 @@ Studies of a siderophore-producing cyclization domain: A refined proposal of sub
 
 *Authors*:  
 --------
-Andrew D. Gnann (a), Yuan Xia (a,1), Jess Soule (a,2), Clara Barthélemy (a), Jayata Mawani (a), Sarah Nzikoba (a,3), Brian Castellano (b,4), Edward Brignole (b), Dominique Frueh (c), Daniel P. Dowling (a,$)
+Andrew D. Gnann (a), Yuan Xia (a,1), Jess Soule (a,2), Clara Barthélemy (a), Jayata Mawani (a), Sarah Nzikoba (a,3), Brian Castellano (b,4), Edward Brignole (b), [Dominique Frueh](https://frueh.med.jhmi.edu/) (c), [Daniel P. Dowling](http://www.dpdowlinglab.net/index.html) (a,$)
 
 (a) Department of Chemistry, [University of Massachusetts Boston](https://www.umb.edu/), Boston MA 02125  
 (b) Department of Biology, [Massachusetts Institute of Technology](https://www.mit.edu/), Cambridge MA 02142  
@@ -25,12 +25,6 @@ Andrew D. Gnann (a), Yuan Xia (a,1), Jess Soule (a,2), Clara Barthélemy (a), Ja
 (4) Present address: Stanford University, Stanford, CA 94305  
 
 $ To whom correspondence should be addressed: Daniel P. Dowling: Department of Chemistry, University of Massachusetts Boston, Boston MA 02125; daniel.dowling@umb.edu; Tel. (617) 287-5853; Fax. (617) 287-6030
-
-Laboratories:  
-- PI: [Daniel P. Dowling](http://www.dpdowlinglab.net/index.html)
-- PI: [Catherine L. Drennan](https://drennan.mit.edu/)
-- PI: [Dominique Frueh](https://frueh.med.jhmi.edu/)
-
 
 *Contents*:  
 -----------
