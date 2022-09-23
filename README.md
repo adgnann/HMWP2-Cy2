@@ -9,6 +9,7 @@ Structural investigation of the second heterocyclization domain from yersiniabac
 *Associated Publication*:  
 -------------------------
 High-resolution structures of a siderophore-producing cyclization domain from *Yersinia pestis* offer a refined proposal of substrate binding
+
 Journal of Biological Chemistry, 2022, https://doi.org/10.1016/j.jbc.2022.102454
 
 *Authors*:  
